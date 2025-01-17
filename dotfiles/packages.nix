@@ -39,6 +39,22 @@
     };
   };
 
+  # Kanata configuration
+  services.kanata = {
+    enable = true;
+    
+    keyboards.default.config = ''
+      ;; Map RCtrl to Menu key
+      (defsrc
+        rctrl
+      )
+      
+      (deflayer base
+        menu
+      )
+    '';
+  };
+
   # Enable dconf
   programs.dconf.enable = true;
   
@@ -46,6 +62,7 @@
   environment.systemPackages = with pkgs; [
     fuzzel
     waybar
+    niri
     
     # Essential
     oh-my-posh
