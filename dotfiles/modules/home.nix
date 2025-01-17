@@ -1,11 +1,18 @@
-{ config, pkgs, lib, ... }: {
-  programs.dconf.enable = true;
+{ config, pkgs, ... }: {
+  imports = [
+    ./waybar/waybar.nix
+  ];
   
   home.username = "gemini";
   home.homeDirectory = "/home/gemini";
   
+  # Enable niri
+  programs.niri = {
+    enabled = true;
+    package = pkgs.niri-stable;
+  }
+
   # Kanata configuration
-  hardware.uinput.enable = true; # Needed for Kanata to work!
   services.kanata = {
     enable = true;
     

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   nixpkgs.config.allowUnfree = true;
   
   # Enable flakes and nix-command
@@ -38,6 +38,9 @@
       };
     };
   };
+
+  # Enable dconf
+  programs.dconf.enable = true;
   
   # Environment packages
   environment.systemPackages = with pkgs; [
