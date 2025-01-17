@@ -18,7 +18,7 @@
     desktopManager.gnome.enable = true;
   };
   
-  services.displayManager.defaultSession = "niri";
+#  services.displayManager.defaultSession = "niri";
   
   # Enable and configure git
   programs.git = {
@@ -73,7 +73,7 @@
     gh
     
     # GTK
-    gnome.dconf-editor
+    dconf-editor
     mission-center
     adw-gtk3
     gapless #g4music
@@ -96,14 +96,14 @@
   ];
   
   # Exclude unneeded packages
-  environment.gnome.excludePackages = with pkgs.gnome; [
+  environment.gnome.excludePackages = with pkgs; [
   	gnome-shell-extensions
   	gnome-system-monitor
-  	pkgs.gnome-tour
   	gnome-contacts
   	gnome-music
   	simple-scan
   	gnome-maps
+  	gnome-tour
   	epiphany
   	evince
   	yelp
@@ -118,7 +118,6 @@
   ];
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

@@ -8,6 +8,8 @@
     extraGroups = [ "wheel" "networkManager" ];
   };
 
+  programs.fish.enable = true;
+
   # Set set time zone to Europe/Madrid
   time.timeZone = "Europe/Madrid";
   
