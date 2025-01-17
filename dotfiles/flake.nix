@@ -11,7 +11,7 @@
     niri.url = "github:sodiboo/niri-flake";
   };
   
-  outputs = { self, nixpkgs, home-manager, niri, waybar }:
+  outputs = { self, nixpkgs, home-manager, niri }:
   let
     global_modules = [
       ./user.nix
@@ -31,7 +31,7 @@
     nixosConfigurations = {
       mercury = nixpkg.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = global_modules ++ [ ./hosts/mercury.nix ];
+        modules = global_modules ++ [ ./hosts/mercury/mercury.nix ];
       };
     };
   };
