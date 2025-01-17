@@ -11,20 +11,26 @@
     niri.url = "github:sodiboo/niri-flake";
   };
   
-  outputs = { self, nixpkgs, home-manager, niri }:
+  outputs = { self, lib, nixpkgs, home-manager, niri }:
   let
     global_modules = [
       ./user.nix
-      ./niri.nix
-      
       ./packages.nix
-      ./programs/programs.nix
+      ./modules/niri.nix
       
+      # Import program configs
+      ./conf/conf.nix
+      
+      # Home Manager
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         
-        home-manager.users.gemini = import ./home.nix;
+        # Use mkMerge to unify multiple files
+        home-manager.users.gemini = lib.mkMerge [
+          (import ./modules/home.nix)
+          (import ./modules/waybar.nix)
+        ];
       }
     ];
   in {
