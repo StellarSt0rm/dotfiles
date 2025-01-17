@@ -9,15 +9,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
-    waybar.url = "github:Alexays/Waybar";
   };
   
   outputs = { self, nixpkgs, home-manager, niri, waybar }:
   let
     global_modules = [
-      ./packages.nix
       ./home.nix
       ./user.nix
+      
+      ./packages.nix
+      ./programs/programs.nix
     ];
   in {
     nixosConfigurations = {
