@@ -16,8 +16,7 @@
     global_modules = [
       ./user.nix
       ./packages.nix
-      ./modules/niri.nix
-      
+
       # Import program configs
       ./conf/conf.nix
       
@@ -26,13 +25,25 @@
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         
-        home-manager.users.gemini = import ./modules/modules.nix;
+        home-manager.users.gemini = import ./modules/home.nix;
       }
     ];
+
+    # Overlays
+    system = "x86_64-linux";
+
+    pkgs = import nixpkgs {
+      inherit system;
+
+      overlays = [
+        niri.overlays.niri
+      ];
+    };
   in {
     nixosConfigurations = {
       mercury = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit pkgs;
+
         modules = global_modules ++ [ ./hosts/mercury/mercury.nix ];
       };
     };
