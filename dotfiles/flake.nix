@@ -2,16 +2,16 @@
   description = "Overthrow the government! /j";
   
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     
     home-manager = {
-      url = "github:nix-comunity/home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri.url = "github:sodiboo/niri-flake";
   };
   
-  outputs = { self, lib, nixpkgs, home-manager, niri }:
+  outputs = { self, nixpkgs, home-manager, niri }:
   let
     global_modules = [
       ./user.nix
@@ -26,16 +26,12 @@
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         
-        # Use mkMerge to unify multiple files
-        home-manager.users.gemini = lib.mkMerge [
-          (import ./modules/home.nix)
-          (import ./modules/waybar.nix)
-        ];
+        home-manager.users.gemini = import ./modules/modules.nix;
       }
     ];
   in {
     nixosConfigurations = {
-      mercury = nixpkg.lib.nixosSystem {
+      mercury = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = global_modules ++ [ ./hosts/mercury/mercury.nix ];
       };

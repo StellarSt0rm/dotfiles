@@ -2,7 +2,6 @@
 # https://github.com/Alexays/Waybar/wiki/Configuration
 
 # TODO:
-# https://github.com/elifouts/Dotfiles/blob/main/.config/waybar/style.css
 # https://github.com/Alexays/Waybar/wiki/Module:-MPRIS
 
 { ... }: {
@@ -16,12 +15,13 @@
       passthrough = false;
       gtk-layer-shell = true;
       
+      style = "${toString ./style.css}";
+      
       # Layout
       modules-left = [
         "niri/workspaces"
         "custom/divider"
-        "cpu"
-        "memory"
+        "mpris"
       ];
       
       modules-center = [
@@ -30,20 +30,36 @@
       
       modules-right = [
         "tray"
-        "network"
-        "custom/divider"
         "idle_inhibitor"
+        "custom/divider"
+        "network"
         "wireplumber"
         "battery"
+        "group/power"
       ];
       
-      # Custom + Clock
+      # Other
       "custom/divider" = {
         format = " | ";
         interval = "once";
-        tooptip = false;
+        tooltip = false;
       };
       
+      # Left modules
+      "niri/workspaces" = {
+        format = "{icon}";
+        format-icons = {
+          coding = ""; # nf-fa-laptop_code
+          research = "󰜏"; # nf-md-search_web
+          
+          active = ""; # nf-oct-dot_fill
+          default = ""; # nf-oct-dot
+        };
+      };
+
+      "mpris" = {}; # TODO
+      
+      # Center Modules
       clock = {
         format = "{%b %d  %H:%M} 󱑒"; # nf-md-clock_time_eight_outline
         tooltip-format = "<tt><small>{calendar}</small></tt>";
@@ -61,32 +77,9 @@
         };
         
         actions = {
-          on-scroll-up = "tz_up";
-          on-scroll-down = "tz_down";
-          
           on-scroll-up = "shift_up";
           on-scroll-down = "shift-down";
         };
-      };
-      
-      # Left modules
-      "niri/workspaces" = {
-        format = "{icon}";
-        format-icons = {
-          coding = ""; # nf-fa-laptop_code
-          research = "󰜏"; # nf-md-search_web
-          
-          active = ""; # nf-oct-dot_fill
-          default = ""; # nf-oct-dot
-        };
-      };
-      
-      cpu = {
-        format = " {usage}%"; # nf-oct-cpu
-      };
-      
-      memory = {
-        format = " {pergentage}%"; # nf-fa-memory
       };
       
       # Right modules
@@ -138,6 +131,32 @@
         
         tooltip-format = "Time ultil full/empty: {time}";
         format-time = "{H} hours, {M} minutes";
+      };
+      
+      "group/power" = {
+        orientation = "inherit";
+        drawer.transition-duration = 500;
+        
+        modules = [ "custom/power" "custom/logout" "custom/lock" ];
+      };
+      
+      # Group/power modules
+      "custom/power" = {
+        format = ""; # nf-fa-power_off
+        tooltip = false;
+        on-click = "gnome-session-quit --power-off";
+      };
+      
+      "custom/logout" = {
+        format = "󰗽"; # nf-md-logout_variant
+        tooltip = false;
+        on-click = "gnome-session-quit --logout";
+      };
+      
+      "custom/lock" = {
+        format = "󰌾"; # nf-md-lock
+        tooltip = false;
+        on-click = "gnome-screensaver-command --lock";
       };
     }];
   };

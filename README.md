@@ -6,7 +6,8 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 # Bootstrapping the config
 1. Setup a user named `gemini`.
 2. `git clone` this repo somewhere. (Preferably $HOME for easy editing)
-3. Add a new host to the configuration. See [Adding a host](#adding-a-host).
+3. Add the new host to the configuration. See [Adding a host](#adding-a-host).
+   - Make sure to run `git add` once you're done.
 4. Enable `flakes`, add `nix.settings.experimental-features = [ "flakes" ];`
 5. Copy `/etc/nixos/hardware-configuration.nix` to `dotfiles/hosts/<hostname>/<hostname>-hardware.nix`.
 6. Run `nix-rebuild switch` to apply the changes.

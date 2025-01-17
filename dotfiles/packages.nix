@@ -1,8 +1,8 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
   
   # Enable flakes and nix-command
-  nix.settings.experimental-features = [ "nix-command", "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -96,6 +96,25 @@
     maple-mono
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
+
+  # Enable sound with pipewire.
+  sound.enable = true;
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+  
+  # Fix GStreamer Plug-in Issue
+  environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" (with pkgs.gst_all_1; [
+    gst-plugins-good
+    gst-plugins-bad
+    gst-plugins-ugly
+    gst-libav
+  ]);
   
   # Enable sudo inults
   security.sudo.package = pkgs.sudo.override { withInsults = true; };
