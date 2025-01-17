@@ -5,7 +5,7 @@
 
   programs.niri.enable = true;
   programs.niri.config = ''
-    switch-events.lid-close { spawn "${pkgs.systemd}/bin/loginctl" "lock-session"; }
+    switch-events.lid-close { spawn "gnome-screensaver-command" "--lock"; }
     
     // Config
     workspace "coding"
@@ -30,17 +30,14 @@
     // Keybinds
     binds = {
       // Spawning
-      Super+Q { spawn "${pkgs.gnome-console}/bin/kgx"; }
-      Super+E { spawn "${pkgs.zed-editor}/bin/zed"; }
-      Super+R { spawn "${pkgs.nautilus}/bin/nautilus" }
-      Super+F { spawn "${pkgs.firefox}/bin/firefox"; }
-      Super+L { spawn "${pkgs.systemd}/bin/loginctl" "lock-session"; }
-      
-      // Destructive actions
-      Alt+Q { close-window; }
+      Super+Q { spawn "kgx"; }
+      Super+E { spawn "zed"; }
+      Super+R { spawn "nautilus"; }
+      Super+F { spawn "firefox"; }
+      Super+L { spawn "gnome-screensaver-command" "--lock"; }
       
       // Other
-      Ctrl+Shift+Escape { spawn "${mission-center}/bin/missioncenter"; }
+      Ctrl+Shift+Escape { spawn "missioncenter"; }
       Print { screenshot; }
     }
     
