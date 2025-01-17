@@ -1,9 +1,8 @@
 # https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
 
-{ config, pkgs, inputs, ... }: {
-  imports = [ inputs.niri.homeModules.niri ];
-
+{ config, ... }: {
   programs.niri.enable = true;
+  
   programs.niri.config = ''
     switch-events.lid-close { spawn "gnome-screensaver-command" "--lock"; }
     
