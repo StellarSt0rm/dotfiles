@@ -60,10 +60,6 @@
   
   # Environment packages
   environment.systemPackages = with pkgs; [
-    fuzzel
-    waybar
-    niri
-    
     # Essential
     oh-my-posh
     fastfetch
