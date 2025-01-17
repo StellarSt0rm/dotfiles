@@ -3,6 +3,8 @@
   
   networking.hostName = "mercury";
   system.stateVersion = "24.11";
+
+  home-manager.users.gemini.home.stateVersion = "24.11";
   
   # Improve battery life
   powerManagement = {

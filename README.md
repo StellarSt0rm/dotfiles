@@ -21,5 +21,5 @@ This new file can contain custom configurations for the host.
 Follow how it's implemented on other hosts to do it correctly.
 
 > [!CAUTION]
-> The file `hosts/<hostname>/<hostname>.nix` **must** define `networking.hostName` and `system.stateVersion`!
+> The file `hosts/<hostname>/<hostname>.nix` **must** define `networking.hostName`, `system.stateVersion` and `home-manager.users.gemini.home.stateVersion`!
 > It's also recommended you import a `hardware-configuration.nix`.
