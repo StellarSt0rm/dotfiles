@@ -1,7 +1,9 @@
 # https://github.com/RoastBeefer00/nix-home/blob/main/nix_modules/waybar.nix
 # https://github.com/Alexays/Waybar/wiki/Configuration
 
+# TODO:
 # https://github.com/elifouts/Dotfiles/blob/main/.config/waybar/style.css
+# https://github.com/Alexays/Waybar/wiki/Module:-MPRIS
 
 { ... }: {
   programs.waybar = {
