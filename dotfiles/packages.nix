@@ -4,6 +4,22 @@
   # Enable flakes and nix-command
   nix.settings.experimental-features = [ "nix-command", "flakes" ];
   
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  
+  # Enable GNOME and GDM
+  services.xserver = {
+    enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+    desktopManager.gnome.enable = true;
+  };
+  
+  services.displayManager.defaultSession = "niri";
+  
   # Enable and configure git
   programs.git = {
     enable = true;
@@ -58,4 +74,30 @@
     #papirus-icon-theme
     #bibata-cursors
   ];
+  
+  # Exclude unneeded packages
+  environment.gnome.excludePackages = with pkgs.gnome; [
+  	gnome-shell-extensions
+  	gnome-system-monitor
+  	pkgs.gnome-tour
+  	gnome-contacts
+  	gnome-music
+  	simple-scan
+  	gnome-maps
+  	epiphany
+  	evince
+  	yelp
+  ];
+  
+  services.xserver.excludePackages = [ pkgs.xterm ];
+  
+  # Install NerdFonts
+  fonts.packages = with pkgs; [
+    maple-mono
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+  ];
+  
+  # Enable sudo inults
+  security.sudo.package = pkgs.sudo.override { withInsults = true; };
+  security.sudo.extraConfig = "Defaults insults";
 }

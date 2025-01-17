@@ -14,11 +14,18 @@
   outputs = { self, nixpkgs, home-manager, niri, waybar }:
   let
     global_modules = [
-      ./home.nix
       ./user.nix
+      ./niri.nix
       
       ./packages.nix
       ./programs/programs.nix
+      
+      home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        
+        home-manager.users.gemini = import ./home.nix;
+      }
     ];
   in {
     nixosConfigurations = {
