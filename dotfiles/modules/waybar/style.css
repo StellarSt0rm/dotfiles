@@ -1,0 +1,119 @@
+/* https://github.com/elifouts/Dotfiles/blob/main/.config/waybar/style.css */
+
+/*
+ * Color palette (From my background):
+ * - Background, #303446
+ * - Outer logo, #232634
+ * - Middle logo, #626880
+ * - Inner logo blue, #81c8be
+ * - Inner logo white, #f2d5cf
+*/
+
+:root {
+  --waybar-padding: 6px;
+  --waybar-margin: 5px;
+  --waybar-border-radius: 10px;
+  
+  --waybar-background: #626880;
+  --waybar-text: #f2d5cf;
+  
+  --waybar-color-1: #81c8be;
+  --waybar-color-2: #303446;
+}
+
+* {
+  font-size: 15px;
+  font-family: "Maple Mono", "Nerd Fonts";
+}
+
+window#waybar {
+  all: unset;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: var(--waybar-padding);
+  margin: var(--waybar-margin);
+  
+  background: alpha(var(--waybar-background), .5);
+  border-radius: var(--waybar-border-radius);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+tooltip {
+  background: var(--waybar-color-1);
+  color: var(--waybar-text);
+}
+
+/* Modules */
+.module:hover {
+  color: var(--waybar-color-1);
+}
+
+.module {
+  padding: 0px var(--waybar-padding);
+  transition: all .3s ease;
+  /* color: var(--waybar-color-1); */
+}
+
+/* Workspaces */
+#workspaces {
+  transition: none;
+}
+
+#workspaces button {
+  all: unset;
+  padding: 0 var(--waybar-padding);
+  color: var(--waybar-color-2);
+}
+
+#workspaces button:hover {
+  color: rbga(0, 0, 0, 0);
+  border: none;
+  text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+  transition: all 1s ease;
+}
+
+workspaces button.active {
+    color: var(--waybar-color-2);
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+#workspaces button.empty {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+
+#workspaces button.empty:hover {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+
+#workspaces button.empty.active {
+    color: @color9;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+/* Battery */
+#battery.charging {
+    color: #26A65B;
+}
+
+#battery.warning:not(.charging) {
+    color: #ffbe61;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
