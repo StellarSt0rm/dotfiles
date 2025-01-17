@@ -1,9 +1,6 @@
 # https://github.com/RoastBeefer00/nix-home/blob/main/nix_modules/waybar.nix
 # https://github.com/Alexays/Waybar/wiki/Configuration
 
-# TODO:
-# https://github.com/Alexays/Waybar/wiki/Module:-MPRIS
-
 { ... }: {
   programs.waybar = {
     settings = [{
@@ -57,7 +54,16 @@
         };
       };
 
-      "mpris" = {}; # TODO
+      "mpris" = {
+        player = "gapless";
+
+        format = "{status_icon} {title} - {artist}";
+        format-stopped = "";
+        status-icons = {
+          playing = "󰝚"; # nf-md-music
+          paused = "󰏤"; # nf-md-pause
+        };
+      };
       
       # Center Modules
       clock = {
