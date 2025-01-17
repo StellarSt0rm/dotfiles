@@ -11,7 +11,7 @@ workspace "research"
 spawn-at-startup "waybar"
 spawn-at-startup "fuzzel"
 
-screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // Inputs
 input {
@@ -25,7 +25,7 @@ input {
 }
 
 // Keybinds
-binds = {
+binds {
   // Spawning
   Super+Q { spawn "kgx"; }
   Super+E { spawn "zed"; }

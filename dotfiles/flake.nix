@@ -8,7 +8,6 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-#    niri.url = "github:sodiboo/niri-flake";
   };
   
   outputs = { self, nixpkgs, home-manager }:
@@ -27,20 +26,7 @@
         
         home-manager.users.gemini = import ./modules/home.nix;
       }
-
-#      niri.nixosModules.niri
     ];
-
-    # Overlays
-#    system = "x86_64-linux";
-#
-#    pkgs = import nixpkgs {
-#      inherit system;
-#
-#      overlays = [
-#        niri.overlays.niri
-#      ];
-#    };
   in {
     nixosConfigurations = {
       mercury = nixpkgs.lib.nixosSystem {
