@@ -6,3 +6,4 @@
   
   home.username = "gemini";
   home.homeDirectory = "/home/gemini";
+}
