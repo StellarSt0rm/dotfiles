@@ -10,7 +10,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
    - Make sure to run `git add` once you're done.
 4. Copy `/etc/nixos/hardware-configuration.nix` to `dotfiles/hosts/<hostname>/<hostname>-hardware.nix`.
 5. Run `nix-rebuild switch` to apply the changes.
-6. Run `nix-rebuild boot --flake ./dotfiles#<hostame>` and reboot.
+6. Run `nix-rebuild boot --flake ./dotfiles#<hostname>` and reboot.
 7. (Optional) Finish setting up `gh auth` and upload any changes you made while bootstrapping.
 
 # Adding a host
