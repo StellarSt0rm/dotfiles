@@ -39,6 +39,7 @@
   # Set user profile picture
   system.activationScripts.script.text = ''
     mkdir -p /var/lib/AccountsService/{icons,users}
+    
     cp ${toString ./modules/gnome/user-icon.png} /var/lib/AccountsService/icons/gemini
     echo -e "[User]\nIcon=/var/lib/AccountsService/icons/gemini\n" > /var/lib/AccountsService/users/gemini
 
