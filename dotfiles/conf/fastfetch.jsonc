@@ -59,12 +59,12 @@
             "key": "  󰅐"
         },
         {
-            "type": "localip",
+            "type": "publicip",
             "key": "  󰩟",
             "compact": true
         },
         {
-            "type": "publicip",
+            "type": "localip",
             "key": "  󰩠",
             "format": "{1}"
         },
