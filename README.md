@@ -6,6 +6,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 # TODO
 - Wait for GTK4 port of [GNOME Disks](https://gitlab.gnome.org/GNOME/gnome-disk-utility/-/merge_requests/91)
 - Wait for GTK4 port of [Dconf Editor](https://gitlab.gnome.org/GNOME/dconf-editor/-/merge_requests/44)
+- Wait for [Noteworthy](https://github.com/SeaDve/Noteworthy) to be available on nixpkgs.
 
 # Bootstrapping the config
 1. Install with no desktop environment, and make a user named `gemini`.
