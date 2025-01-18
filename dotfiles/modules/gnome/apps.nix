@@ -36,7 +36,6 @@
       
       single-click-activate = true;
       blur-mode = (mkUint32 0); # None
-      compact-playlist = true;
       rotate-cover = false;
       grid-mode = true;
       show-peak = true;
