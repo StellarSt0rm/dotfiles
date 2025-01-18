@@ -33,6 +33,11 @@
         system = "x86_64-linux";
         modules = global_modules ++ [ ./hosts/mercury/mercury.nix ];
       };
+      
+      test = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = global_modules ++ [ ./hosts/test/test.nix ];
+      };
     };
   };
 }
