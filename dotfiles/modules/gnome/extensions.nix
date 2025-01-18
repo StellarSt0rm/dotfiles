@@ -22,6 +22,7 @@ in {
       mpris-label.extensionUuid
       alttab-mod.extensionUuid
       pip-on-top.extensionUuid
+      app-hider.extensionUuid
       caffeine.extensionUuid
     ];
     
@@ -48,6 +49,16 @@ in {
       keep-selected-on-clear = true;
       confirm-clear = true;
     };
+    
+    "org/gnome/shell/extensions/app-hider".hidden-apps = [
+      "fish.desktop"
+      "btop.desktop"
+      "nixos-manual.desktop"
+      
+      "ca.desrt.dconf-editor.desktop"
+      "org.gnome.seahorse.Application.desktop"
+      "org.gnome.Console.desktop"
+    ];
     
     # Blur my shell
     "org/gnome/shell/extensions/blur-my-shell/panel" = {

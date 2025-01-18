@@ -3,6 +3,8 @@
     ./extensions.nix
     ./apps.nix
     ./keybinds.nix
+    
+    #./background-override.nix # Override GDM background
   ];
   
   dconf.settings = with lib.hm.gvariant; {

@@ -103,6 +103,7 @@
     mpris-label
     alttab-mod
     pip-on-top
+    app-hider
     caffeine
   ]);
   
