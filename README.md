@@ -3,6 +3,10 @@ This is my NixOS configuration! ^.^
 
 Most of these 'docs' are for future me, for if I forget how this configuration was structured.
 
+# TODO
+- Wait for GTK4 port of [GNOME Disks](https://gitlab.gnome.org/GNOME/gnome-disk-utility/-/merge_requests/91)
+- Wait for GTK4 port of [Dconf Editor](https://gitlab.gnome.org/GNOME/dconf-editor/-/merge_requests/44)
+
 # Bootstrapping the config
 1. Install with no desktop environment, and make a user named `gemini`.
 2. `git clone` this repo somewhere. (Preferably $HOME for easy editing)
