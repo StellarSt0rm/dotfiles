@@ -113,6 +113,7 @@
   	gnome-shell-extensions
   	gnome-system-monitor
   	gnome-contacts
+    gnome-weather
   	gnome-music
   	simple-scan
   	gnome-maps
