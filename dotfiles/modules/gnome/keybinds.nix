@@ -6,7 +6,7 @@
       name = "Terminal (kgx)";
     };
     
-    "org/gnome/settings-daemon/plugins/media-keys/custom/keybindings/zed-editor" = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/zed-editor" = {
       binding = "<Super>e";
       command = "zed";
       name = "Zen Editor";
