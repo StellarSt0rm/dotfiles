@@ -1,0 +1,210 @@
+/* All Pages *
+body {
+	background-color: #1b1b1b;
+}
+
+/* ---------------------------------------- Newtab ---------------------------------------- */
+@-moz-document url(chrome://browser/content/browser.xul), url(about:newtab), url(about:home), url(about:privatebrowsing) {
+	:root {
+		--newtab-background-color-secondary: #0e0e0ef5 !important;
+		--newtab-element-hover-color: #1a1919f5 !important;
+	}
+	body{
+		background: url("/etc/nixos/desktop/wallpaper.jpg") no-repeat center fixed !important;
+		background-size: cover !important;
+	}
+	
+	/* Settings */
+	.customize-menu {
+		background-color: #1b1b1bc7 !important;
+	}
+	
+	.personalize-button {
+		opacity: 0;
+		margin: 10px 10px 0 0 !important;
+		padding: 0 0 60px 60px !important;
+		background-position: top right !important;
+		transition: 0.4s;
+		
+		display: none !important; /* The Button Is Not Really Needed */
+	}
+	.personalize-button:hover {
+		opacity: 1;
+		background-color: transparent !important;
+	}
+	
+	/* Shortcuts */
+	.tile {
+		box-shadow: none !important;
+		background: none !important;
+		backdrop-filter: blur(5px);
+		outline: solid #ffffff20 2px !important;
+	}
+	.context-menu-button {
+		top: 0 !important;
+		background-color: transparent !important;
+		
+		&:focus {
+		  outline: none !important;
+		}
+	}
+	.top-site-icon {
+	  background-color: transparent !important;
+	}
+	.top-sites-list, .context-menu  {
+	  background: #ffffff15 !important;
+		backdrop-filter: blur(6px);
+		outline: solid #ffffff20 2px;
+		border-radius: 10px !important;
+	}
+	
+	.top-site-button {
+	  transition: 0.1s;
+	  outline: solid transparent 5px !important;
+	}
+	.top-sites-list:not(.dnd-active) .top-site-outer:is(.active, :hover, :focus-within) .top-site-button {
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    background: #ffffff15;
+    outline: solid #ffffff20 2px !important;
+	}
+	.top-site-outer {
+	  background: none !important;
+	  margin-bottom: 0 !important;
+	}
+	
+	.context-menu {
+		backdrop-filter: blur(10px) !important;
+		background: none !important;
+		transform: translateY(-10px);
+	}
+	.context-menu-list {
+	  padding: 0 !important;
+	}
+	
+	.context-menu-item > button:is(:focus, :hover) {
+	  background: #ffffff15 !important;
+	  outline: solid #ffffff20 2px !important;
+	  border-radius: 10px;
+	}
+	
+	/* Logo / Search*/
+	.search-inner-wrapper {
+		display: none !important;
+	}
+	.search-wrapper {
+	  display: flex;
+	  justify-content: center;
+	}
+	.logo-and-wordmark {
+	  backdrop-filter: blur(10px);
+	  background: #ffffff15;
+	  padding: 48px 100px;
+	  border-radius: 20px;
+	  margin-bottom: 0 !important;
+	  
+	  outline: solid #ffffff20 2px;
+	}
+	.logo {
+	  width: 82px !important;
+	  height: 82px !important;
+	  background-size: 82px !important;
+	}
+	.wordmark {
+	  height: 82px !important;
+	  width: 134px !important;
+	  background-size: 134px !important;
+	}
+	
+	.showPrivate {
+	  display: flex;
+	  justify-content: center;
+	}
+	.info-border {
+	  display: none;
+	}
+	
+	.icon-pin-small {
+		transform: translateY(-1px);
+	}
+}
+
+/* ---------------------------------------- Settings ---------------------------------------- */
+@-moz-document
+	url-prefix(about:preferences), url-prefix(about:addons), url-prefix(about:support), 
+	url-prefix(about:profiles) , url-prefix(about:debugging), url-prefix(about:welcome){
+
+	:host, :root {
+		--in-content-page-background: #1b1b1b !important;
+	}
+	#category-more-from-mozilla, #category-sync {
+		display: none !important;
+	}
+}
+
+/* ---------------------------------------- web.whatsapp.com ---------------------------------------- */
+@-moz-document url-prefix("https://web.whatsapp.com/") {
+	._1jJ70 {
+		top: 0 !important;
+		margin: 0 0 0 0 !important;
+		height: 100% !important;
+		max-width: none !important;
+		width: 100% !important;
+	}
+	.ga8gq0dm {
+		height: auto !important;
+	}
+	.r96muop5 {
+		transform: translateY(4px) !important;
+		font-size: 1.1875rem !important;
+		font-weight: 500 !important;
+	}
+	.fe5nidar {
+		transform: translateY(3px)!important;
+	}
+	.tkq7s68q {
+		transform: translateY(2px) !important;
+	}
+	[data-asset-chat-background-dark], html[dir] ._64p9P { /* Alt Selector Class: " .tbmiozwh " */
+		background-image: url("./custom/wallpaper1.jpg") !important;
+		opacity: 1 !important;
+		background-position: center !important;
+		background-size: cover !important;
+		transform: translateY(60px) !important;
+		height: 95% !important;
+	}
+	._3PwsU > svg:nth-child(1) > path:nth-child(1) {
+		opacity: 0 !important;
+	}
+	html[dir] ._20Tzn {
+		margin: 16px auto 0 auto !important;
+		padding: 5px !important;
+		color: #ffffff !important;
+		border-radius: 10px !important;
+		width: 80% !important;
+		background-color: #364147 !important;
+	}
+	._2v9n-, ._3500k {
+		transform: translateY(-60px) !important;
+	}
+	html[dir] .n6BPp {
+		margin: 9px 12px 5px !important;
+	}
+	#mod-message > a:nth-child(1):hover {
+		text-decoration-line: underline !important;
+	}
+}
+
+/* ---------------------------------------- web.telegram.org ---------------------------------------- */
+@-moz-document url-prefix("https://web.telegram.org/") {
+	#page-chats {
+		max-width: none !important;
+		width: 100% !important;
+		margin: 0 0 0 0 !important;
+		border: none !important;
+	}
+	.chat-background-item {
+		background-position: center !important;
+		background-size: 140% !important;
+	}
+}

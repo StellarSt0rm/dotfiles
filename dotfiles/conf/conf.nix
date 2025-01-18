@@ -4,6 +4,6 @@
     "L+ %h/.config/fish/config.fish       0755 - - - ${toString ./fish.fish}"
     "L+ %h/.config/fish/oh-my-posh.toml   0755 - - - ${toString ./oh-my-posh.toml}"
     
-    #"L+ %h/.config/niri/niri.kdl          0755 - - - ${toString ./niri.kdl}"
+    #"L+ %h/.config/niri/config.kdl          0755 - - - ${toString ./niri.kdl}"
   ];
 }

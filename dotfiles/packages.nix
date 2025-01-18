@@ -82,17 +82,30 @@
     rustup
     
     # Other
+    gnome-tweaks
     ffmpeg
     btop
     xsel
     
     # Themes
-    #papirus-icon-theme
-    #bibata-cursors
-  ];
+    papirus-icon-theme
+    bibata-cursors
+  ] ++ (with pkgs.gnomeExtensions; [
+    clipboard-indicator
+    tiling-assistant
+    just-perfection
+    burn-my-windows
+    blur-my-shell
+    appindicator
+    dash-to-dock
+    mpris-label
+    alttab-mod
+    pip-on-top
+    caffeine
+  ]);
   
   # Exclude unneeded packages
-  environment.gnome.excludePackages = with pkgs; [
+  environment.gnome.excludePackages = (with pkgs; [
   	gnome-shell-extensions
   	gnome-system-monitor
   	gnome-contacts
@@ -103,7 +116,7 @@
   	epiphany
   	evince
   	yelp
-  ];
+  ]);
   
   services.xserver.excludePackages = [ pkgs.xterm ];
   
