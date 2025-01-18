@@ -87,6 +87,7 @@
     gnome-tweaks
     clapper
     ffmpeg
+    folio
     btop
     xsel
     
