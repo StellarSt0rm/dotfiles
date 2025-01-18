@@ -166,4 +166,9 @@ in {
       center-window = [ "<Super>c" ];
     };
   };
+  
+  # Save the burn my windows config
+  systemd.user.tmpfiles.rules = [
+    "L+ %h/.config/burn-my-windows/profiles/nix-profile.conf 0755 - - - ${burn-my-windows-profile}"
+  ];
 }

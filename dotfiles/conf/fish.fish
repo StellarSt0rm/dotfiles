@@ -20,8 +20,10 @@ if status is-interactive
     echo "$(string sub -l 20 -- $command) - Terminal (fish)"
   end
   
-  # Init oh-my-posh
-  oh-my-posh init fish -c "$HOME/.config/fish/oh-my-posh.toml" | source
+  # Init oh-my-posh - oh-my-posh is broken in Zed at the moment
+  if test "$TERM_PROGRAM" != "zed"
+    oh-my-posh init fish -c "$HOME/.config/fish/oh-my-posh.toml" | source
+  end
   
   # Aliases
   alias clr 'clear'
@@ -38,7 +40,7 @@ if status is-interactive
   printf '\033[5 q'
   
   stty -echo
-  if test "$TERM_PROGRAM" = "" -a "$IN_NIX_SHELL" = ""
+  if test "$TERM_PROGRAM" != "zed" -a "$IN_NIX_SHELL" = ""
     clear
     fastfetch
     echo -n -e $N2
