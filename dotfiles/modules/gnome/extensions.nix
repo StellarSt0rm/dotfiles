@@ -91,7 +91,7 @@ in {
     };
     
     # MPRIS Label
-    "org/gnome/extensions/mpris-label" = {
+    "org/gnome/shell/extensions/mpris-label" = {
       # Looks
       mpris-sources-whitelist = "Gapless";
       use-whitelisted-sources-only = true;
