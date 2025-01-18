@@ -8,8 +8,8 @@
     
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/zed-editor" = {
       binding = "<Super>e";
-      command = "zed";
-      name = "Zen Editor";
+      command = "zeditor";
+      name = "Zed Editor";
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/system-monitor" = {
