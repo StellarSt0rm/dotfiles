@@ -85,6 +85,7 @@
     
     # Other
     gnome-tweaks
+    clapper
     ffmpeg
     btop
     xsel
@@ -118,6 +119,7 @@
   	gnome-tour
   	epiphany
   	evince
+  	totem
   	yelp
   ]);
   
