@@ -60,6 +60,8 @@
   
   # Environment packages
   environment.systemPackages = with pkgs; [
+    librewolf
+    
     # Essential
     oh-my-posh
     fastfetch
