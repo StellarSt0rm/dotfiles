@@ -38,7 +38,7 @@ if status is-interactive
   printf '\033[5 q'
   
   stty -echo
-  if test "$TERM_PROGRAM" == "" -a "$IN_NIX_SHELL" = ""
+  if test "$TERM_PROGRAM" = "" -a "$IN_NIX_SHELL" = ""
     clear
     fastfetch
     echo -n -e $N2

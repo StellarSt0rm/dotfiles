@@ -1,20 +1,20 @@
 { lib, ... }: {
   dconf.settings = with lib.hm.gvariant; {
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal" = {
       binding = "<Super>q";
       command = "kgx";
       name = "Terminal (kgx)";
     };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/system-monitor" = {
       binding = "<Control><Shift>Escape";
       command = "missioncenter";
       name = "System Monitor";
     };
     
     "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/system-monitor/"
     ];
     
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -26,9 +26,6 @@
       begin-move = [ "<Super>z" ];
       begin-resize = [ "<Super>x" ];
       close = [ "<Alt>q" ];
-      
-      maximize = [ "<Super>Up" ];
-      unmaximize = [ "<Super>Down" ];
     };
     
     "org/gnome/shell/keybindings" = {
