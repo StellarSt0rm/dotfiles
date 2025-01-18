@@ -35,4 +35,17 @@
   };
   
   console.keyMap = "es";
+  
+  # Set user profile picture
+  system.activationScripts.script.text = ''
+    mkdir -p /var/lib/AccountsService/{icons,users}
+    cp ${toString ./modules/gnome/user-icon.png} /var/lib/AccountsService/icons/gemini
+    echo -e "[User]\nIcon=/var/lib/AccountsService/icons/gemini\n" > /var/lib/AccountsService/users/gemini
+
+    chown root:root /var/lib/AccountsService/users/gemini
+    chmod 0600 /var/lib/AccountsService/users/gemini
+ 
+    chown root:root /var/lib/AccountsService/icons/gemini
+    chmod 0444 /var/lib/AccountsService/icons/gemini
+  '';
 }
