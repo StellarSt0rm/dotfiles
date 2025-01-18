@@ -114,7 +114,7 @@ in {
       enable-double-clicks = true;
       left-click-action = "play-pause";
       middle-click-action = "volume-mute";
-      right-click-action = "activate-player";
+      right-click-action = "none";
       
       left-double-click-action = "next-track";
       right-double-click-action = "prev-track";
