@@ -33,13 +33,6 @@
         system = "x86_64-linux";
         modules = global_modules ++ [ ./hosts/mercury/mercury.nix ];
       };
-      
-      # Test host, each vm needs it's own `test-hardware.nix`,
-      # that's why it's ignored in .gitignore
-      test = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = global_modules ++ [ ./hosts/test/test.nix ];
-      };
     };
   };
 }
