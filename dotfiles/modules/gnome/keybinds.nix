@@ -5,20 +5,27 @@
       command = "kgx";
       name = "Terminal (kgx)";
     };
+    
+    "org/gnome/settings-daemon/plugins/media-keys/custom/keybindings/zed-editor" = {
+      binding = "<Super>e";
+      command = "zed";
+      name = "Zen Editor";
+    };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/system-monitor" = {
       binding = "<Control><Shift>Escape";
       command = "missioncenter";
       name = "System Monitor";
     };
-    
+        
     "org/gnome/settings-daemon/plugins/media-keys".custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/terminal/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/zed-editor/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/system-monitor/"
     ];
     
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      home = [ "<Super>e" ];
+      home = [ "<Super>r" ];
       www = [ "<Super>f" ];
     };
     
