@@ -29,22 +29,25 @@ Follow how it's implemented on other hosts to do it correctly!
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
 
 # Connecting to a network
-   1. Make a new wpa_supplicant file (`nano /tmp/wpa.conf`) and write to it:
-   ```
-   network={
-    ssid="<SSID>"
-    psk="<PASSWORD>"
-   }
-   ```
-   2. Start wpa_supplicant:
-   ```
-   ifconfig # Get device name
-   sudo wpa_supplicant -i <DEVICE> -c /tmp/wpa.conf
-   ```
-   3. If the network doesnt have DHCP (Automatic IP assignment):
-   ```
-   ifconfig # Get the network IP for the device
-   sudo ip addr add <IP>/24 dev <DEVICE>
-   sudo ip route add default via <IP>
-   ```
-   4. Check connection: `ping itsfoss.com`
+   1. Make a new wpa_supplicant config (`nano /tmp/wpa.conf`) and write to it:
+      ```
+      network={
+        ssid="<SSID>"
+        psk="<PASSWORD>"
+      }
+      ```
+   2. Start wpa_supplicant with the conf:
+      ```
+      ifconfig # Get device name
+      sudo systemctl stop NetworkManager # If the system has NetworkManager, stop it!
+      
+      sudo wpa_supplicant -i <DEVICE> -c /tmp/wpa.conf
+      ```
+   3. If the network doesnt have DHCP:
+      ```
+      ifconfig # Get the network IP for the device
+      
+      sudo ip addr add <IP>/24 dev <DEVICE>
+      sudo ip route add default via <IP>
+      ```
+   4. Check the connection: `ping itsfoss.com`
