@@ -42,5 +42,14 @@
       
       monitor-changes = true;
     };
+    
+    "com/toolstack/Folio" = {
+      notes-dir = "/home/Gemini/Documents/Notes";
+      enable-autosave = true;
+      
+      cheatsheet-enabled = true;
+      toolbar-enabled = true;
+      note-max-width = -1;
+    };
   };
 }
