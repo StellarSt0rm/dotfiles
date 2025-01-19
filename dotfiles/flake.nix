@@ -8,16 +8,23 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # Other Flakes
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
   
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager }@inputs:
   let
     global_modules = [
+      # Fix error when a command isnt found + Pass inputs to all modules
+      ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
+      { _module.args = { inherit inputs; }; }
+      
+      # Main modules
       ./user.nix
       ./packages.nix
 
-      # Import program configs
-      ./conf/conf.nix
+      ./configs/configs.nix
       
       # Home Manager
       home-manager.nixosModules.home-manager {
