@@ -10,7 +10,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 
 # Bootstrapping the config
 1. Install with no desktop environment, and make a user named `gemini`.
-2. Configure and connect to a network. See [Connecting to a network](#connecting-to-a-network)
+2. Configure and connect to a network. See [Connecting to a network](#connecting-to-a-network).
 4. `git clone` this repo somewhere. (Preferably $HOME for easy editing)
 5. Add the new host to the configuration. See [Adding a host](#adding-a-host).
    - Make sure to run `git add .` once done, otherwise the new files wont be seen by nix.
