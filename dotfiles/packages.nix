@@ -62,6 +62,7 @@
   environment.systemPackages = with pkgs; [
     # Flakes
     inputs.zen-browser.packages."${pkgs.system}".default
+    inputs.zed-editor.packages.default
     
     # Essential
     oh-my-posh
@@ -80,7 +81,6 @@
     
     # Coding
     fishPlugins.autopair
-    zed-editor
     python311
     rustup
     

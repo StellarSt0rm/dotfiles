@@ -11,6 +11,7 @@
     
     # Other Flakes
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zed-editor.url = "github:zed-industries/zed";
   };
   
   outputs = { self, nixpkgs, home-manager }@inputs:
