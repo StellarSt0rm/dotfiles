@@ -45,7 +45,7 @@
     
     "com/toolstack/Folio" = {
       notes-dir = "/home/gemini/Documents/Notes";
-      trash-dir = "/home/gemini/Documents/Notes/Trash";
+      trash-dir = "/home/gemini/Documents/Notes";
       enable-autosave = true;
       
       cheatsheet-enabled = true;
