@@ -44,7 +44,7 @@
     };
     
     "com/toolstack/Folio" = {
-      notes-dir = "/home/Gemini/Documents/Notes";
+      notes-dir = "/home/gemini/Documents/Notes";
       enable-autosave = true;
       
       cheatsheet-enabled = true;
