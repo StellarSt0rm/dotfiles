@@ -10,9 +10,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 
 # Bootstrapping the config
 1. Install with no desktop environment, and make a user named `gemini`.
-2. Configure and connect to a network.
-   - For WPA, see [Connecting to a network (WPA)](#connecting-to-a-network-wpa)
-   - For others, see [Connecting to a network](#connecting-to-a-network)
+2. Configure and connect to a network. See [Connecting to a network](#connecting-to-a-network)
 4. `git clone` this repo somewhere. (Preferably $HOME for easy editing)
 5. Add the new host to the configuration. See [Adding a host](#adding-a-host).
    - Make sure to run `git add .` once done, otherwise the new files wont be seen by nix.
@@ -31,34 +29,22 @@ Follow how it's implemented on other hosts to do it correctly!
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
 
 # Connecting to a network
+   1. Make a new wpa_supplicant file (`nano /tmp/wpa.conf`) and write to it:
    ```
-   iwconfig
-   iwconfig CARD_NAME up
-   
-   iwconfig CARD_NAME essid WIFI_NAME key s:WIFI_PASSWORD
-
-   dhclient -r
-   dhclient CARD_NAME
+   network={
+    ssid="<SSID>"
+    psk="<PASSWORD>"
+   }
    ```
-
-# Connecting to a network (WPA)
+   2. Start wpa_supplicant:
    ```
-   wpa_cli
-   
-   > scan
-   > scan_results
-
-   > add_network
-   > set_network 0 ssid "NETWORK_SSID"
-   > set_network 0 psk "PASSWORD"
-
-   > enable_network 0
-   > reconnect
-   > status
-   
-   > quit
-
-   iwconfig
-   dhclient -r
-   dhclient CARD_NAME
+   ifconfig # Get device name
+   sudo wpa_supplicant -i <DEVICE> -c /tmp/wpa.conf
    ```
+   3. If the network doesnt have DHCP (Automatic IP assignment):
+   ```
+   ifconfig # Get the network IP for the device
+   sudo ip addr add <IP>/24 dev <DEVICE>
+   sudo ip route add default via <IP>
+   ```
+   4. Check connection: `ping itsfoss.com`
