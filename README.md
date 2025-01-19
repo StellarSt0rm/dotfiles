@@ -31,44 +31,34 @@ Follow how it's implemented on other hosts to do it correctly!
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
 
 # Connecting to a network
-1. Start the WIFI card:
    ```
    iwconfig
-   iwconfig NAME up
-   ```
-2. Connect to the network:
-   ```
-   iwconfig wlan0 essid NAME key s:PASSWORD
+   iwconfig CARD_NAME up
+   
+   iwconfig CARD_NAME essid WIFI_NAME key s:WIFI_PASSWORD
 
    dhclient -r
-   dhclient NAME
+   dhclient CARD_NAME
    ```
 
 # Connecting to a network (WPA)
-1. Start wpa interactive mode: `wpa_cli`
-2. Run a scan:
    ```
+   wpa_cli
+   
    > scan
    > scan_results
-   ```
-3. Add network:
-   ```
+
    > add_network
    > set_network 0 ssid "NETWORK_SSID"
    > set_network 0 psk "PASSWORD"
-   ```
-4. Set it as current and reconnect:
-   ```
+
    > enable_network 0
    > reconnect
    > status
    
    > quit
-   ```
-5. Get a new IP:
-   ```
+
    iwconfig
-   
    dhclient -r
-   dhclient NAME
+   dhclient CARD_NAME
    ```
