@@ -73,6 +73,7 @@ in {
     
     "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
       override-background = true;
+      unblur-in-overview = true;
       blur = true;
     };
     
