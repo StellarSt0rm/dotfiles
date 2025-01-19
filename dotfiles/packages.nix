@@ -1,10 +1,10 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
   nixpkgs.config.allowUnfree = true;
   
   # Enable flakes and nix-command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   
@@ -60,7 +60,8 @@
   
   # Environment packages
   environment.systemPackages = with pkgs; [
-    librewolf
+    # Flakes
+    inputs.zen-browser.packages."${pkgs.system}".default
     
     # Essential
     oh-my-posh
