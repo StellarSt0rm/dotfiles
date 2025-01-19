@@ -23,15 +23,14 @@
       # Main modules
       ./user.nix
       ./packages.nix
-
+      
+      ./modules/modules.nix
       ./configs/configs.nix
       
       # Home Manager
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        
-        home-manager.users.gemini = import ./modules/home.nix;
       }
     ];
   in {
