@@ -25,7 +25,9 @@ This new file can contain custom configurations for the host.
 Follow how it's implemented on other hosts to do it correctly!
 
 > [!CAUTION]
-> The file `hosts/<hostname>/<hostname>.nix` **must** define `networking.hostName`, `system.stateVersion` and `home-manager.users.gemini.home.stateVersion`! \
+> The file `hosts/<hostname>/<hostname>.nix` **must** define: \
+> `networking.hostName`, `system.stateVersion` and `home-manager.users.gemini.home.stateVersion`!
+>
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
 
 # Connecting to a network
@@ -36,7 +38,7 @@ Follow how it's implemented on other hosts to do it correctly!
         psk="<PASSWORD>"
       }
       ```
-   2. Start wpa_supplicant with the conf:
+   2. Start wpa_supplicant with the config:
       ```
       ifconfig # Get device name
       sudo systemctl stop NetworkManager # If the system has NetworkManager, stop it!
