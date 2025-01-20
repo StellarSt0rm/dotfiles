@@ -61,12 +61,13 @@
   # Environment packages
   environment.systemPackages = with pkgs; [
     # Flakes
-    inputs.zen-browser.packages."${pkgs.system}".default
-    inputs.zed-editor.packages.default
+    #inputs.zen-browser.packages."${pkgs.system}".default
+    #inputs.zed-editor.packages."${pkgs.system}".default
     
     # Essential
     oh-my-posh
     fastfetch
+    librewolf
     fish
     xsel
     git
@@ -83,6 +84,7 @@
     fishPlugins.autopair
     python311
     rustup
+    zed
     
     # Other
     gnome-tweaks

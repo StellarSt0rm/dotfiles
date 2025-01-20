@@ -1,5 +1,5 @@
 { config, ... }: {
-  import = [ ./mercury-hardware.nix ];
+  imports = [ ./mercury-hardware.nix ];
   
   networking.hostName = "mercury";
   system.stateVersion = "24.11";
