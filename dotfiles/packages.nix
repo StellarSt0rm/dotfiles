@@ -82,9 +82,9 @@
     
     # Coding
     fishPlugins.autopair
+    zed-editor
     python311
     rustup
-    zed
     
     # Other
     gnome-tweaks
