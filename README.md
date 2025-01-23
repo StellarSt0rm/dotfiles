@@ -5,6 +5,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 
 # TODO
 - [ ] Configure librewolf with Home Manager. [Ref1](https://github.com/Misterio77/nix-config/blob/main/home/gabriel/features/desktop/common/firefox.nix), [Ref2](https://gitlab.com/usmcamp0811/dotfiles/-/blob/fb584a888680ff909319efdcbf33d863d0c00eaa/modules/home/apps/firefox/default.nix). [Doc1](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.librewolf.settings), [Doc2](https://librewolf.net/docs/settings/). [NUR](https://nur.nix-community.org/documentation/#using-the-flake-in-nixos).
+- [ ] Split `global_modules` into profiles, for in the future when the config will be used on multiple types of devices?
 
 <br>
 
