@@ -1,4 +1,13 @@
-{ config, pkgs, lib, inputs, ... }: {
+{ config, pkgs, lib, inputs, ... }:
+let
+  bibata-cursors-207 = (import (builtins.fetchGit {
+    # Descriptive name to make the store path easier to identify
+    name = "bibata-cursors-207";
+    url = "https://github.com/NixOS/nixpkgs/";
+    ref = "refs/heads/nixpkgs-unstable";
+    rev = "21808d22b1cda1898b71cf1a1beb524a97add2c4";
+  }) {}).bibata-cursors;
+in {
   nixpkgs.config.allowUnfree = true;
   
   # Enable flakes and nix-command
@@ -96,7 +105,7 @@
     
     # Themes
     papirus-icon-theme
-    bibata-cursors
+    bibata-cursors-207
   ] ++ (with pkgs.gnomeExtensions; [
     clipboard-indicator
     tiling-assistant
