@@ -1,7 +1,6 @@
 { config, pkgs, lib, inputs, ... }:
 let
   bibata-cursors-207 = (import (builtins.fetchGit {
-    # Descriptive name to make the store path easier to identify
     name = "bibata-cursors-207";
     url = "https://github.com/NixOS/nixpkgs/";
     ref = "refs/heads/nixpkgs-unstable";
