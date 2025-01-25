@@ -16,6 +16,7 @@
       wayland = true;
       
       banner = "Overthrow The Government!";
+      settings.greeter.exclude = "root";
     };
     desktopManager.gnome.enable = true;
   };
