@@ -43,6 +43,8 @@
     };
     
     # Interface
+    "org/gnome/desktop/lockdown/disable-user-switching" = true;
+    
     "org/gnome/desktop/background".picture-uri-dark  = "file://${toString ./nixos-wallpaper-catppuccin-frappe.png}";
     "org/gnome/desktop/screensaver" = {
       picture-uri = "file://${toString ./nixos-wallpaper-catppuccin-frappe.png}";

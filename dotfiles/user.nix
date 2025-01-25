@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }: {
   users.users.gemini = {
     isNormalUser = true;
+    description = "Gemini";
     
     home = "/home/gemini";
     shell = pkgs.fish;
