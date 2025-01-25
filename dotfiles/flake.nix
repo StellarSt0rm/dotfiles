@@ -1,5 +1,5 @@
 {
-  description = "Overthrow the government! /j";
+  description = "Overthrow The Government! /j";
   
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -9,16 +9,34 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
     # Other Flakes
-    #zed-editor.url = "github:zed-industries/zed";  # Too big, plus ~3000MB installed size
+    home-librewolf = {
+      url = "github:nix-community/home-manager?ref=pull/5684/head";
+      flake = false;
+    };
   };
   
-  outputs = { self, nixpkgs, home-manager }@inputs:
+  outputs = { nixpkgs, home-manager, nur, ... }@inputs:
   let
     global_modules = [
       # Fix error when a command isnt found + Pass inputs to all modules
       ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
       { _module.args = { inherit inputs; }; }
+      
+      # Overlays
+      nur.modules.nixos.default
+      
+      # Home Manager
+      home-manager.nixosModules.home-manager {
+        home-manager.backupFileExtension = "backup";
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+      }
       
       # Main modules
       ./user.nix
@@ -26,12 +44,6 @@
       
       ./modules/modules.nix
       ./configs/configs.nix
-      
-      # Home Manager
-      home-manager.nixosModules.home-manager {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-      }
     ];
   in {
     nixosConfigurations = {

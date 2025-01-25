@@ -1,12 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
-let
-  bibata-cursors-207 = (import (builtins.fetchGit {
-    name = "bibata-cursors-207";
-    url = "https://github.com/NixOS/nixpkgs/";
-    ref = "refs/heads/nixpkgs-unstable";
-    rev = "21808d22b1cda1898b71cf1a1beb524a97add2c4";
-  }) {}).bibata-cursors;
-in {
+{ config, pkgs, lib, inputs, ... }: {
   nixpkgs.config.allowUnfree = true;
   
   # Enable flakes and nix-command
@@ -22,11 +14,13 @@ in {
     displayManager.gdm = {
       enable = true;
       wayland = true;
+      
+      banner = "Overthrow The Government!";
     };
     desktopManager.gnome.enable = true;
   };
   
-#  services.displayManager.defaultSession = "niri";
+  services.displayManager.defaultSession = "gnome";
   
   # Enable and configure git
   programs.git = {
@@ -68,10 +62,6 @@ in {
   
   # Environment packages
   environment.systemPackages = with pkgs; [
-    # Flakes
-    #inputs.zen-browser.packages."${pkgs.system}".default
-    #inputs.zed-editor.packages."${pkgs.system}".default
-    
     # Essential
     oh-my-posh
     fastfetch
@@ -104,7 +94,7 @@ in {
     
     # Themes
     papirus-icon-theme
-    bibata-cursors-207
+    bibata-cursors
   ] ++ (with pkgs.gnomeExtensions; [
     clipboard-indicator
     tiling-assistant
