@@ -16,7 +16,7 @@
     
     # Other Flakes
     home-librewolf = {
-      url = "github:nix-community/home-manager?ref=pull/5684/head";
+      url = "github:nix-community/home-manager/pull/5684/head";
       flake = false;
     };
   };
