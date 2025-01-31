@@ -33,13 +33,15 @@
     "org/gnome/desktop/search-providers" = {
       disabled = [
         "org.gnome.seahorse.Application.desktop"
-        "org.gnome.Characters.desktop"
-        "org.gnome.Epiphany.desktop"
         "org.gnome.Nautilus.desktop"
         "org.gnome.Settings.desktop"
         "org.gnome.clocks.desktop"
       ];
-      sort-order = [ "org.gnome.Calculator.desktop" "org.gnome.Calendar.desktop" ];
+      sort-order = [
+        "org.gnome.Calculator.desktop"
+        "org.gnome.Calendar.desktop"
+        "org.gnome.Characters.desktop"
+      ];
     };
     
     # Interface
