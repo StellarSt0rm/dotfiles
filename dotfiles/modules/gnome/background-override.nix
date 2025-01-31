@@ -10,12 +10,14 @@
               (pkgs.writeText "bg.patch" ''
                 --- a/data/theme/gnome-shell-sass/widgets/_login-lock.scss
                 +++ b/data/theme/gnome-shell-sass/widgets/_login-lock.scss
-                @@ -15,4 +15,5 @@ $_gdm_dialog_width: 23em;
+                @@ -15,6 +15,7 @@ $_gdm_dialog_width: 23em;
                  /* Login Dialog */
                  .login-dialog {
                    background-color: $_gdm_bg;
                 +  background-image: url('file://${toString ./nixos-wallpaper-catppuccin-frappe.png}');
                  }
+
+                 // buttons
               '')
             ];
           });
