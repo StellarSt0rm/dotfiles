@@ -41,7 +41,7 @@
   system.activationScripts.script.text = ''
     mkdir -p /var/lib/AccountsService/{icons,users}
     
-    cp ${toString ./modules/gnome/user-icon.png} /var/lib/AccountsService/icons/gemini
+    cp ${toString ./modules/gnome/images/user-icon.png} /var/lib/AccountsService/icons/gemini
     echo -e "[User]\nIcon=/var/lib/AccountsService/icons/gemini\n" > /var/lib/AccountsService/users/gemini
 
     chown root:root /var/lib/AccountsService/users/gemini
