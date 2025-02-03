@@ -1,11 +1,13 @@
 { inputs, pkgs, ... }: {
   # Remove when this PR is backported: https://github.com/nix-community/home-manager/pull/5684  
-  nixpkgs.overlays = [(final: prev: {
-    home-manager = prev.home-manager // {
-      programs.librewolf = import "${inputs.home-librewolf.outPath}/modules/programs/librewolf.nix";
-    };
-  })];
-  
+  nixpkgs.overlays = [
+    (final: prev: {
+      home-manager = prev.home-manager // {
+        programs.librewolf = import "${inputs.home-librewolf.outPath}/modules/programs/librewolf.nix";
+      };
+    })
+  ];
+
   home.file."gnome-theme" = {
     target = ".librewolf/gemini/chrome/gnome-theme";
     source = fetchTarball {
@@ -13,10 +15,10 @@
       sha256 = "sha256:072kaq9x7gjzwxzql3yn4x523is65pgzczaaw9a2rdc4gnm4ggsb";
     };
   };
-  
+
   programs.librewolf = {
     enable = true;
-    
+
     policies = {
       PasswordManagerEnabled = false;
 
@@ -24,39 +26,39 @@
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       EnableTrackingProtection = true;
-      
+
       # Looks
       DisplayBookmarksToolbar = "never";
       OverrideFirstRunPage = "";
       OverridePostUpdatePage = "";
     };
-    
+
     profiles.gemini = {
       id = 0;
       name = "Gemini";
       isDefault = true;
-      
+
       search = {
         force = true;
-        
+
         default = "Startpage";
         privateDefault = "Startpage";
         order = [ "Startpage" ];
-        
+
         engines = {
           "Startpage" = {
             urls = [{
               template = "https://startpage.com/do/search";
-              
+
               params = [
                 { name = "query"; value = "{searchTerms}"; }
                 { name = "prfe"; value = (builtins.readFile ./startpage.conf); }
               ];
             }];
-            
+
             iconUpdateURL = "http://startpage.com/sp/cdn/favicons/favicon-gradient.ico";
           };
-          
+
           "Bing".metaData.hidden = true;
           "DuckDuckGo".metaData.hidden = true;
           "Google".metaData.hidden = true;
@@ -64,56 +66,56 @@
           "History".metaData.hidden = true;
         };
       };
-      
+
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
         bitwarden
-        
+
         sponsorblock
         youtube-recommended-videos # Unhook extension
-        
+
         unpaywall
         tabliss
       ];
-      
+
       settings = {
         "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
         "security.donottrackheader.enabled" = true;
         "browser.startup.page" = 3; # Keep open windows
         "general.autoScroll" = true;
-        
+
         # Annoyances
         "clipboard.autocopy" = false;
         "middlemouse.paste" = false;
-        
+
         "extensions.pocket.showHome" = false;
         "extensions.pocket.enabled" = false;
         "signon.rememberSignons" = false;
         "browser.uitour.enabled" = false;
-        
+
         "identity.fxaccounts.enabled" = false;
         "identity.fxaccounts.toolbar.enabled" = false;
         "identity.fxaccounts.pairing.enabled" = false;
         "identity.fxaccounts.commands.enabled" = false;
-        
+
         "dom.battery.enabled" = false;
         "dom.private-attribution.submission.enabled" = false;
-        
+
         # Looks
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "widget.gtk.rounded-bottom-corners.enabled" = true;
         "svg.context-properties.content.enabled" = true;
         "browser.theme.dark-private-windows" = false;
         "browser.uidensity" = 0;
-        
+
         "gnomeTheme.systemIcons" = true;
         "gnomeTheme.hideWebrtcIndicator" = true;
         "gnomeTheme.hideSingleTab" = true;
-        
+
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {
-            widget-overflow-fixed-list = [];
-            
+            widget-overflow-fixed-list = [ ];
+
             nav-bar = [
               "back-button"
               "forward-button"
@@ -128,11 +130,11 @@
               "unified-extensions-button"
             ];
             toolbar-menubar = [ "menubar-items" ];
-            
+
             TabsToolBar = [ "tabbrowser-tabs" ];
             PersonalToolbar = [ "import-button" "personal-bookmarks" ];
           };
-          
+
           seen = [
             "developer-button"
             "ublock0_raymondhill_net-browser-action"
@@ -141,13 +143,13 @@
             "myallychou_gmail_com-browser-action"
             "sponsorblocker_ajay_app-browser-action"
           ];
-          
-          dirtyAreaCache = [];
+
+          dirtyAreaCache = [ ];
           currentVersion = 20;
           newElementCount = 0;
         };
       };
-      
+
       userChrome = ''
         @import "gnome-theme/userChrome.css";
         

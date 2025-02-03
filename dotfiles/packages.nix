@@ -1,66 +1,28 @@
-{ config, pkgs, lib, inputs, ... }: {
+{ pkgs, lib, ... }: {
   nixpkgs.config.allowUnfree = true;
-  
+
   # Enable flakes and nix-command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   # Enable GNOME and GDM
   services.xserver = {
     enable = true;
     displayManager.gdm = {
       enable = true;
       wayland = true;
-      
+
       banner = "Overthrow The Government!";
       settings.greeter.exclude = "root";
     };
     desktopManager.gnome.enable = true;
   };
-  
+
   services.displayManager.defaultSession = "gnome";
-  
-  # Enable and configure git
-  programs.git = {
-    enable = true;
-    
-    config = {
-      "credential \"https://github.com\"" = {
-        helper = "!/run/current-system/sw/bin/gh auth git-credential";
-      };
-      "credential \"https://gist.github.com\"" = {
-        helper = "!/run/current-system/sw/bin/gh auth git-credential";
-      };
-      
-      user = {
-        email = "StellarSt0rm@proton.me";
-        name = "StellarSt0rm";
-      };
-    };
-  };
 
-  # Kanata configuration
-  services.kanata = {
-    enable = true;
-    
-    keyboards.default.config = ''
-      ;; Map RCtrl to Menu key
-      (defsrc
-        rctrl
-      )
-      
-      (deflayer base
-        menu
-      )
-    '';
-  };
-
-  # Enable dconf
-  programs.dconf.enable = true;
-  
   # Environment packages
   environment.systemPackages = with pkgs; [
     # Essential
@@ -71,20 +33,20 @@
     xsel
     git
     gh
-    
+
     # GTK
     dconf-editor
     mission-center
     adw-gtk3
     gapless #g4music
     gtk4
-    
+
     # Coding
     fishPlugins.autopair
     zed-editor
     python311
     rustup
-    
+
     # Other
     gnome-tweaks
     clapper
@@ -92,7 +54,7 @@
     folio
     btop
     xsel
-    
+
     # Themes
     papirus-icon-theme
     bibata-cursors
@@ -110,25 +72,25 @@
     app-hider
     caffeine
   ]);
-  
+
   # Exclude unneeded packages
   environment.gnome.excludePackages = (with pkgs; [
-  	gnome-shell-extensions
-  	gnome-system-monitor
-  	gnome-contacts
+    gnome-shell-extensions
+    gnome-system-monitor
+    gnome-contacts
     gnome-weather
-  	gnome-music
-  	simple-scan
-  	gnome-maps
-  	gnome-tour
-  	epiphany
-  	evince
-  	totem
-  	yelp
+    gnome-music
+    simple-scan
+    gnome-maps
+    gnome-tour
+    epiphany
+    evince
+    totem
+    yelp
   ]);
-  
+
   services.xserver.excludePackages = [ pkgs.xterm ];
-  
+
   # Install NerdFonts
   fonts.packages = with pkgs; [
     maple-mono
@@ -144,7 +106,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  
+
   # Fix GStreamer Plug-in Issue
   environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0" (with pkgs.gst_all_1; [
     gst-plugins-good
@@ -152,8 +114,4 @@
     gst-plugins-ugly
     gst-libav
   ]);
-  
-  # Enable sudo inults
-  security.sudo.package = pkgs.sudo.override { withInsults = true; };
-  security.sudo.extraConfig = "Defaults insults";
 }
