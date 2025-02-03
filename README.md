@@ -25,8 +25,6 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
    - Make sure to run `git add .` once done, otherwise the new files wont be seen by nix.
 6. Run `nix-rebuild boot --flake ./dotfiles#<hostname>` and reboot.
 
-A final step could be to `gh auth login` and upload any changes made while bootstrapping.
-
 # Adding a host
 Make a new file in `dotfiles/hosts/<hostname>/<hostname>.nix`, and then add the host to `dotfiles/flakes.nix`. \
 This new file can contain custom configurations for the host.
@@ -38,6 +36,10 @@ Follow how it's implemented on other hosts to do it correctly!
 > `networking.hostName`, `system.stateVersion` and `home-manager.users.gemini.home.stateVersion`!
 >
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
+
+---
+
+TODO, add section about preparing GPG and SSH keys here.
 
 # Connecting to a network
    1. Make a new wpa_supplicant config (`nano /tmp/wpa.conf`) and write to it:
@@ -51,13 +53,13 @@ Follow how it's implemented on other hosts to do it correctly!
       ```
       ifconfig # Get device name
       sudo systemctl stop NetworkManager # If the system has NetworkManager, stop it!
-      
+
       sudo wpa_supplicant -i <DEVICE> -c /tmp/wpa.conf
       ```
    3. If the network doesnt have DHCP:
       ```
       ifconfig # Get the network IP for the device
-      
+
       sudo ip addr add <IP>/24 dev <DEVICE>
       sudo ip route add default via <IP>
       ```
