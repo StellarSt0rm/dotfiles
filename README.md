@@ -37,10 +37,6 @@ Follow how it's implemented on other hosts to do it correctly!
 >
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
 
----
-
-TODO, add section about preparing GPG and SSH keys here.
-
 # Connecting to a network
    1. Make a new wpa_supplicant config (`nano /tmp/wpa.conf`) and write to it:
       ```
