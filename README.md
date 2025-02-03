@@ -37,6 +37,9 @@ Follow how it's implemented on other hosts to do it correctly!
 >
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
 
+> [!NOTE]
+> It's recommended to setup SSH and GPG keys on the private repo, goto [dotfiles secrets](https://github.com/StellarSt0rm/dotfiles_secrets), specific instructions stored there.
+
 # Connecting to a network
    1. Make a new wpa_supplicant config (`nano /tmp/wpa.conf`) and write to it:
       ```
