@@ -1,3 +1,4 @@
 [submodule "secrets"]
 	path = secrets
 	url = https://github.com/StellarSt0rm/dotfiles_secrets.git
+	branch = main
