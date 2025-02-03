@@ -1,6 +1,6 @@
 # My NixOS Dotfiles
 This is my NixOS configuration! ^.^ \
-Most of these 'docs' are for future me, for if I forget how this configuration was structured.
+Most of these 'docs' are for future me, for if I forget how this configuration was structured
 
 ### Useful stuff
 - [Nix Package Versions](https://lazamar.co.uk/nix-versions)
