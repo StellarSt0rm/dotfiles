@@ -38,7 +38,7 @@ Follow how it's implemented on other hosts to do it correctly!
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
 
 > [!NOTE]
-> It's recommended to setup SSH and GPG keys, use `git submodule update secrets` and read the [instructions](/secrets/README.md).
+> It's recommended to setup SSH and GPG keys, use `git submodule update --init secrets` and read the [instructions](/secrets/README.md).
 
 # Connecting to a network
    1. Make a new wpa_supplicant config (`nano /tmp/wpa.conf`) and write to it:
