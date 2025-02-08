@@ -56,6 +56,8 @@
     };
 
     "org/gnome/desktop/interface" = {
+      monospace-font-name = "Maple Mono 10";
+
       color-scheme = "prefer-dark";
       cursor-theme = "Bibata-Modern-Ice";
       icon-theme = "Papirus-Dark";
