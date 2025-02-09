@@ -17,7 +17,7 @@
       };
       commit.gpgSign = true;
       
-      pull.rebase = false;
+      pull.rebase = true;
       push.rebase = false;
     };
   };
