@@ -54,6 +54,11 @@
     in
     {
       nixosConfigurations = {
+        starlight = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = global_modules ++ [ ./hosts/starlight/starlight.nix ];
+        };
+
         mercury = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = global_modules ++ [ ./hosts/mercury/mercury.nix ];
