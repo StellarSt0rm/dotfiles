@@ -15,20 +15,23 @@
     };
 
     # Other Flakes
+    nix-index-db = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-librewolf = {
       url = "github:nix-community/home-manager/pull/5684/head";
       flake = false;
     };
   };
 
-  outputs = { nixpkgs, home-manager, nur, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, nix-index-db, ... }@inputs:
     let
       global_modules = [
         # Fix error when a command isnt found + Pass inputs to all modules
-        {
-          config = { nix.registry.nixpkgs.flake = nixpkgs; };
-          _module.args = { inherit inputs; };
-        }
+        nix-index-db.nixosModules.nix-index
+        { _module.args = { inherit inputs; }; }
 
         # Overlays
         nur.modules.nixos.default
