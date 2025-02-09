@@ -6,10 +6,7 @@
       last-window-size = (mkTuple [ 790 500 ]);
       last-window-maximised = false;
 
-      use-system-font = false;
-      custom-font = "Maple Mono 10";
       ignore-scrollback-limit = true;
-
       audible-bell = false;
       visual-bell = false;
     };
@@ -23,9 +20,6 @@
       show-line-numbers = true;
       show-map = true;
       wrap-text = false;
-
-      #use-system-font = false;
-      #custom-font = "Maple Mono 11";
     };
 
     "com/github/neithern/g4music" = {
