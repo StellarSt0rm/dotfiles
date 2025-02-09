@@ -7,7 +7,6 @@
     #./images/gdm-override.nix # Override GDM background
   ];
 
-  programs.dconf.enable = true;
   dconf.settings = {
     "org/gnome/shell/app-switcher".current-workspace-only = true;
     "org/gnome/shell/window-switcher".current-workspace-only = true;

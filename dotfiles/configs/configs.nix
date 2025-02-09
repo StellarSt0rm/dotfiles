@@ -1,4 +1,7 @@
 { pkgs, ... }: {
+  # Enable dconf
+  programs.dconf.enable = true;
+
   # Enable and configure git
   programs.git = {
     enable = true;
