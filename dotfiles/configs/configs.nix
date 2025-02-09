@@ -15,8 +15,10 @@
         email = "StellarSt0rm@proton.me";
         name = "StellarSt0rm";
       };
-
       commit.gpgSign = true;
+      
+      pull.rebase = false;
+      push.rebase = false;
     };
   };
 
