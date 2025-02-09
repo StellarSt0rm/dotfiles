@@ -9,7 +9,6 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 - [X] Configure librewolf with Home Manager. [Ref1](https://github.com/Misterio77/nix-config/blob/main/home/gabriel/features/desktop/common/firefox.nix), [Ref2](https://gitlab.com/usmcamp0811/dotfiles/-/blob/fb584a888680ff909319efdcbf33d863d0c00eaa/modules/home/apps/firefox/default.nix), **[Ref3](https://github.com/nix-community/home-manager/issues/6154)**. [Doc1](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.librewolf.settings), [Doc2](https://librewolf.net/docs/settings/). **[NUR](https://nur.nix-community.org/documentation/#using-the-flake-in-nixos)**. | [Help1](https://nixos.wiki/wiki/Librewolf#System-wide), [Help1.2](https://mynixos.com/home-manager/option/programs.firefox.package). [Extra1](https://github.com/nix-community/home-manager/pull/5128), [Extra2](https://github.com/nix-community/home-manager/pull/5684).
 - [ ] Split `global_modules` into profiles, in case i add more devices that need vastly different stuff in the future?
 - [ ] Remove all references to `home-librewolf` once [this PR](https://github.com/nix-community/home-manager/pull/5684) is backported
-- [ ] Try to get [this patch](https://discourse.nixos.org/t/gdm-background-image-and-theme/12632/4) working.
 
 <br>
 

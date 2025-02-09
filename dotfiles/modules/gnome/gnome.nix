@@ -3,8 +3,6 @@
     ./extensions.nix
     ./apps.nix
     ./keybinds.nix
-
-    #./images/gdm-override.nix # Override GDM background
   ];
 
   dconf.settings = {
