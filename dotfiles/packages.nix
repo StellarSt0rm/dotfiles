@@ -49,6 +49,7 @@
 
     # Other
     gnome-tweaks
+    parabolic
     clapper
     ffmpeg
     folio
