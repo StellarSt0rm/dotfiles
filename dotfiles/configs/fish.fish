@@ -3,8 +3,7 @@ if not status is-interactive
   return
 end
 
-# ---
-
+# Functions
 function __fish_fnc_sudo_ctrl_q
   set -l buf (commandline -b)
   set -l pos (commandline -C)
@@ -45,8 +44,7 @@ alias cb-copy fish_clipboard_copy
 alias cb-paste fish_clipboard_paste
 
 alias clean-sys 'nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot'
-
-set EDITOR gnome-text-editor
+set EDITOR nano
 
 # Shell startup
 printf '\033[5 q'
