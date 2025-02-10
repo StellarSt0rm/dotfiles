@@ -50,7 +50,7 @@
     "L+ %h/.config/fastfetch/config.jsonc 0755 - - - ${toString ./fastfetch.jsonc}"
     "L+ %h/.config/fish/config.fish       0755 - - - ${toString ./fish.fish}"
     "L+ %h/.config/fish/oh-my-posh.toml   0755 - - - ${toString ./oh-my-posh.toml}"
-
-    #"L+ %h/.config/niri/config.kdl        0755 - - - ${toString ./niri.kdl}"
+    
+    "L+ %h/.config/Nickvision\\x20Tube\\x20Converter/config.json 0755 - - - ${toString ./parabolic.json}"
   ];
 }

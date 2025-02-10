@@ -1,0 +1,20 @@
+{
+  "IncludeAutoGenertedSubtitles": false,
+  "AutomaticallyCheckForUpdates": true,
+  "ShowDisclaimerOnStartup": false,
+  "EmbedChapters": false,
+  "EmbedSubtitle": false,
+  "SpeedLimit": 1024,
+
+  "CompletedNotificationPreference": 1,
+  "PreventSuspendWhenDownloading": false,
+  "RunInBackground": false,
+  "OverwriteExistingFiles": true,
+  "MaxNumberOfActiveDownloads": 5,
+
+  "EmbedMetadata": true,
+  "CropAudioThumbnails": true,
+  "RemoveSourceData": true,
+
+  "PreviousMediaFileType": 2
+}
