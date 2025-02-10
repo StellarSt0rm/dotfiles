@@ -4,7 +4,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 
 ### Useful stuff
 - [Nix Package Versions](https://lazamar.co.uk/nix-versions)
-- [Releae Notes](https://nixos.org/manual/nixos/stable/release-notes)
+- [Release Notes](https://nixos.org/manual/nixos/stable/release-notes)
 - [Release Status](https://endoflife.date/nixos)
 
 # TODO
