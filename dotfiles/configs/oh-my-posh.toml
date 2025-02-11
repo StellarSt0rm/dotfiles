@@ -22,8 +22,10 @@ console_title_template = "Terminal ({{ .Shell }})"
   [[blocks.segments]]
     type = "path"
     style = "plain"
+    
     background = "transparent"
     foreground = "p:path"
+    
     template = '{{ if matchP "^[^~/]" .Path }}/{{ end }}{{ .Path }}' # Fix when at /, the / doesnt show.
 
     [blocks.segments.properties]
@@ -35,8 +37,10 @@ console_title_template = "Terminal ({{ .Shell }})"
   [[blocks.segments]]
     type = "git"
     style = "plain"
+    
     foreground = "p:git"
     background = "transparent"
+    
     template = " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"
 
     [blocks.segments.properties]
@@ -48,6 +52,7 @@ console_title_template = "Terminal ({{ .Shell }})"
   [[blocks.segments]]
     type = "command"
     style = "plain"
+    template = "{{ .Output }}"
     
     [blocks.segments.properties]
       command = "printf '\\033[5 q'"
@@ -60,8 +65,10 @@ console_title_template = "Terminal ({{ .Shell }})"
   [[blocks.segments]]
     type = "executiontime"
     style = "plain"
+    
     foreground = "yellow"
     background = "transparent"
+    
     template = "{{ .FormattedMs }}"
 
     [blocks.segments.properties]
@@ -77,22 +84,25 @@ console_title_template = "Terminal ({{ .Shell }})"
   [[blocks.segments]]
     type = "text"
     style = "plain"
+    
     foreground = "p:normal"
     foreground_templates = [
-			"{{ if gt .Code 0 }}p:error{{ end }}",
-			"{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
-		]
+      "{{ if gt .Code 0 }}p:error{{ end }}",
+      "{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
+    ]
     background = "transparent"
+    
     template = "❯"
 
 # Transient Prompt
 [transient_prompt]
   foreground = "p:normal"
-	foreground_templates = [
-		"{{ if gt .Code 0 }}p:error{{ end }}",
-		"{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
-	]
+  foreground_templates = [
+    "{{ if gt .Code 0 }}p:error{{ end }}",
+    "{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
+  ]
   background = "transparent"
+  
   template = "❯ "
 
 # Secondary Prompt
@@ -100,4 +110,5 @@ console_title_template = "Terminal ({{ .Shell }})"
   foreground = "p:normal"
   foreground_template = "{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
   background = "transparent"
+  
   template = "❯❯ "
