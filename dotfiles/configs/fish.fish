@@ -1,6 +1,13 @@
 set fish_greeting ""
+set EDITOR nano
+
 if not status is-interactive
   return
+end
+
+function fish_title
+  set -l command (status current-command) # Add "line" to include arguments
+  echo "$(string sub -l 20 -- $command) - Terminal (fish)"
 end
 
 # Functions
@@ -27,18 +34,12 @@ function nix-run
   nix-shell -p $pkg --command $cmd
 end
 
-# Change title style
-function fish_title
-  set -l command (status current-command) # Add "line" to include arguments
-  echo "$(string sub -l 20 -- $command) - Terminal (fish)"
-end
-
 # Init oh-my-posh - oh-my-posh is broken in Zed at the moment
 if test "$TERM_PROGRAM" != "zed"
   oh-my-posh init fish -c "$HOME/.config/fish/oh-my-posh.toml" | source
 end
 
-# Aliases
+# Aliases and abbrs
 alias clr 'clear'
 abbr --add "gedit" "gnome-text-editor" --position anywhere
 
@@ -46,7 +47,6 @@ alias cb-copy fish_clipboard_copy
 alias cb-paste fish_clipboard_paste
 
 alias clean-sys 'nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot'
-set EDITOR nano
 
 # Shell startup
 printf '\033[5 q'
@@ -55,6 +55,5 @@ stty -echo
 if test "$TERM_PROGRAM" != "zed" -a "$IN_NIX_SHELL" = ""
   clear
   fastfetch
-  echo -n -e $N2
 end
 stty echo
