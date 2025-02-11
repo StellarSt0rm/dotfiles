@@ -66,8 +66,6 @@ console_title_template = "Terminal ({{ .Shell }})"
     style = "plain"
 
     foreground = "p:execution_time"
-    background = "transparent"
-
     template = "{{ .FormattedMs }}"
 
     [blocks.segments.properties]
