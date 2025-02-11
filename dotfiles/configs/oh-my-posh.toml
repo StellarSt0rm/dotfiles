@@ -70,7 +70,7 @@ console_title_template = "Terminal ({{ .Shell }})"
 			"{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
 		]
     background = "transparent"
-    template = "❯"
+    template = "❯\033[5 q"
 
 [transient_prompt]
   foreground = "p:normal"
