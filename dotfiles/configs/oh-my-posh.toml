@@ -5,6 +5,7 @@ final_space = true
 console_title_template = "Terminal ({{ .Shell }})"
 
 [palette]
+  execution_time = "yellow"
   nix_shell = "yellow"
   path = "blue"
   git = "#6c6c6c"
@@ -66,7 +67,7 @@ console_title_template = "Terminal ({{ .Shell }})"
     type = "executiontime"
     style = "plain"
     
-    foreground = "yellow"
+    foreground = "p:execution_time"
     background = "transparent"
     
     template = "{{ .FormattedMs }}"
