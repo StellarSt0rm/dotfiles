@@ -12,23 +12,26 @@ console_title_template = "Terminal ({{ .Shell }})"
   normal = "magenta"
   error = "red"
 
+# Path & Git line
 [[blocks]]
   type = "prompt"
   alignment = "left"
   newline = true
 
+  # Path
   [[blocks.segments]]
     type = "path"
     style = "plain"
     background = "transparent"
     foreground = "p:path"
-    template = '{{ if matchP "^[^~/]" .Path }}/{{ end }}{{ .Path }}'
+    template = '{{ if matchP "^[^~/]" .Path }}/{{ end }}{{ .Path }}' # Fix when at /, the / doesnt show.
 
     [blocks.segments.properties]
       style = "mixed"
       mixed_threshold = 25
       folder_icon = "…"
 
+  # Git
   [[blocks.segments]]
     type = "git"
     style = "plain"
@@ -41,6 +44,15 @@ console_title_template = "Terminal ({{ .Shell }})"
       commit_icon = "@"
       fetch_status = true
 
+  # Force the bar cursor type (|)
+  [[blocks.segments]]
+    type = "command"
+    style = "plain"
+    
+    [blocks.segments.properties]
+      command = "printf '\\033[5 q'"
+
+# Execution time
 [[blocks]]
   type = "rprompt"
   overflow = "hidden"
@@ -56,6 +68,7 @@ console_title_template = "Terminal ({{ .Shell }})"
       style = "round"
       threshold = 5000
 
+# Prompt
 [[blocks]]
   type = "prompt"
   alignment = "left"
@@ -70,8 +83,9 @@ console_title_template = "Terminal ({{ .Shell }})"
 			"{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
 		]
     background = "transparent"
-    template = "❯\033[5 q"
+    template = "❯"
 
+# Transient Prompt
 [transient_prompt]
   foreground = "p:normal"
 	foreground_templates = [
@@ -81,6 +95,7 @@ console_title_template = "Terminal ({{ .Shell }})"
   background = "transparent"
   template = "❯ "
 
+# Secondary Prompt
 [secondary_prompt]
   foreground = "p:normal"
   foreground_template = "{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
