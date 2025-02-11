@@ -58,8 +58,9 @@ console_title_template = "Terminal ({{ .Shell }})"
 
 # Execution time
 [[blocks]]
-  type = "rprompt"
-  overflow = "hidden"
+  type = "prompt"
+  alignment = "right"
+  overflow = "hide"
 
   [[blocks.segments]]
     type = "executiontime"
