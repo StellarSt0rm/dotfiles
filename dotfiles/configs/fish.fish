@@ -29,7 +29,7 @@ function nix-run
   set args (string split -f2 -m1 -- "nix-run" (status current-commandline))
   set args (string trim -r -- $args)
 
-  set pkg (string split -f1 -m1 -- " --" $args | string trim | string split -- " ")
+  set pkg (string split -f1 -m1 -- " --" $args | string trim | string split " ")
   set cmd (string split -f2 -m1 -- "-- " $args); or set cmd "fish" # Fallback to 'fish'
 
   if test -z "$pkg"
