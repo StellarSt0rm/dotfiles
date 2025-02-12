@@ -29,10 +29,8 @@ function nix-run
   set args (string split -f2 -m1 -- "nix-run" (status current-commandline))
   set args (string trim -r -- $args)
 
-  set pkg (string split -f1 -m1 -- " --" $args)
-  set pkg (string trim -- $pkg | string split -- " ")
-  set cmd (string split -f2 -m1 -- "-- " $args)
-  or set cmd "fish" # Fallback
+  set pkg (string split -f1 -m1 -- " --" $args | string trim | string split -- " ")
+  set cmd (string split -f2 -m1 -- "-- " $args); or set cmd "fish" # Fallback to 'fish'
 
   if test -z "$pkg"
     echo "You must provide at least one package."
