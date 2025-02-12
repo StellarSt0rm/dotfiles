@@ -30,7 +30,6 @@ function nix-run
   set args (string trim -r -- $args)
 
   set pkg (string split -f1 -m1 -- " --" $args)
-  set pkg (string trim -- $pkg)
   set cmd (string split -f2 -m1 -- "-- " $args)
   or set cmd "fish" # Fallback
 
@@ -38,7 +37,7 @@ function nix-run
     echo "You must provide at least one package."
     return 1
   end
-  nix-shell -p "$pkg" --command "$cmd"
+  nix-shell -p $pkg --command "$cmd"
 end
 
 # Init oh-my-posh - oh-my-posh is broken in Zed at the moment
