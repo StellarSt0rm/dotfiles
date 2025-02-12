@@ -51,7 +51,7 @@ abbr --add "gedit" "gnome-text-editor" --position anywhere
 alias cb-copy fish_clipboard_copy
 alias cb-paste fish_clipboard_paste
 
-alias clean-sys 'nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot'
+alias clean-sys 'sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot'
 
 # Shell startup
 printf '\033[5 q'
