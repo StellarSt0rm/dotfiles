@@ -54,7 +54,7 @@ alias cb-paste fish_clipboard_paste
 alias clean-sys 'sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot'
 
 # Shell startup
-printf '\033[5 q'
+bind \cq '__fish_sudo_ctrl_q'
 
 stty -echo
 if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
