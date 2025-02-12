@@ -9,11 +9,11 @@ console_title_template = "Terminal ({{ .Shell }})"
   normal = "magenta"
   error = "red"
 
-  execution_time = "yellow"
   path = "blue"
-
-  git_arrows = "cyan"
   git = "#6c6c6c"
+  git_arrows = "cyan"
+
+  execution_time = "yellow"
 
 # Path & Git line
 [[blocks]]
