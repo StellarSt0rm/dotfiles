@@ -7,7 +7,9 @@ end
 
 function fish_title
   set -l command (status current-command) # Add "line" to include arguments
-  echo "$(string sub -l 20 -- $command) - Terminal (fish)"
+  if test $command != "fish"
+    echo "$(string sub -l 20 -- $command) - Terminal (fish)"
+  end
 end
 
 # Functions
