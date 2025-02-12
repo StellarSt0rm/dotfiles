@@ -13,14 +13,14 @@ function fish_title
     set trun (string sub -l 17 -- $command)
     if test "$trun" != "$command"; set ext "…"; end
     
-    echo "$trun$ext - Terminal (fish)"
+    echo "$trun$ext - Terminal"
   else if test "$path" != "$USER"
     set trun (string sub -l 17 -- $path)
     if test "$trun" != "$path"; set ext "…"; end
     
-    echo "$trun$ext - Terminal (fish)"
+    echo "$trun$ext - Terminal"
   else
-    echo "Terminal (fish)"
+    echo "Terminal"
   end
 end
 
