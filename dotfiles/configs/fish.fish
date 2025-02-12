@@ -27,8 +27,8 @@ end
 function nix-run
   # nix-run [<packages>] [-- <cmd>]
 
-  set pkg (string split -f1 -m1 " -- " -- (echo $argv))
-  set cmd (string split -f2 -m1 " -- " -- (echo $argv))
+  set pkg (string split -f1 -m1 "--" -- (echo $argv))
+  set cmd (string split -f2 -m1 "--" -- (echo $argv))
   or set cmd "fish" # Fallback
 
   nix-shell -p $pkg --command $cmd
