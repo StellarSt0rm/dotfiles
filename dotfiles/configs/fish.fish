@@ -30,6 +30,7 @@ function nix-run
   set args (string trim -r -- $args)
 
   set pkg (string split -f1 -m1 -- " --" $args)
+  set pkg (string trim -- $pkg | string split -- " ")
   set cmd (string split -f2 -m1 -- "-- " $args)
   or set cmd "fish" # Fallback
 
