@@ -6,10 +6,11 @@ if not status is-interactive
 end
 
 function fish_title
-  set command (status current-command) # Add "line" to include arguments
+  set command (status current-commandline) # Use "current-commandline" to include arguments
   set path (basename (pwd))
   
-  if test "$command" != "fish"
+  # Handle both command and commandline, both display differently....
+  if test -n "$command" -a "$command" != "fish"
     set trun (string sub -l 17 -- $command)
     if test "$trun" != "$command"; set ext "…"; end
     
