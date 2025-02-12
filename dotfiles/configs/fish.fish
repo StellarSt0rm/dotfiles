@@ -11,7 +11,7 @@ function fish_title
 end
 
 # Functions
-function __fish_fnc_sudo_ctrl_q
+function __fish_sudo_ctrl_q
   set -l buf (commandline -b)
   set -l pos (commandline -C)
 
@@ -54,7 +54,7 @@ alias cb-paste fish_clipboard_paste
 alias clean-sys 'sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot'
 
 # Shell startup
-bind \cq '__fish_fnc_sudo_ctrl_q'
+bind \cq '__fish_sudo_ctrl_q'
 
 stty -echo
 if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
