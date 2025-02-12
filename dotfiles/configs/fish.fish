@@ -33,7 +33,7 @@ function nix-run
   set cmd (string split -f2 -m1 -- "-- " $args)
   or set cmd "fish" # Fallback
 
-  if set -q pkg
+  if test -z "$pkg"
     echo "You must provide at least one package."
     return 1
   end
