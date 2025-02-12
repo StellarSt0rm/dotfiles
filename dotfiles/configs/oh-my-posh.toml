@@ -13,6 +13,7 @@ console_title_template = "Terminal ({{ .Shell }})"
   git = "#6c6c6c"
   git_arrows = "cyan"
 
+  status = "#6c6c6c"
   execution_time = "yellow"
 
 # Path & Git line
@@ -68,7 +69,7 @@ console_title_template = "Terminal ({{ .Shell }})"
     style = "plain"
 
     foreground = "p:error"
-    template = "{{ .Code }}<white>{{ if .Segments.Executiontime.Template }} / {{ end }}</>"
+    template = "{{ .Code }}<p:status>{{ if .Segments.Executiontime.Template }} / {{ end }}</>"
 
   # Execution Time
   [[blocks.segments]]
