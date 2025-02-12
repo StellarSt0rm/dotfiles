@@ -7,8 +7,14 @@ end
 
 function fish_title
   set -l command (status current-command) # Add "line" to include arguments
-  if test $command != "fish"
+  set -l path (basename (pwd))
+  
+  if test "$command" != "fish"
     echo "$(string sub -l 20 -- $command) - Terminal (fish)"
+  else if test "$path" != "$USER"
+    echo "$path - Terminal (fish)"
+  else
+    echo "Terminal (fish)"
   end
 end
 
