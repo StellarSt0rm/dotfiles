@@ -69,7 +69,7 @@ console_title_template = "Terminal ({{ .Shell }})"
     style = "plain"
 
     foreground = "p:error"
-    template = "{{ .Code }}<p:status>{{ if .Segments.Executiontime.Template }} / {{ end }}</>"
+    template = "[{{ .Code }}]<p:status>{{ if .Segments.Executiontime.Template }} / {{ end }}</>"
 
   # Execution Time
   [[blocks.segments]]
