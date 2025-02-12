@@ -12,7 +12,7 @@ function fish_title
   if test "$command" != "fish"
     echo "$(string sub -l 20 -- $command) - Terminal (fish)"
   else if test "$path" != "$USER"
-    echo "$path - Terminal (fish)"
+    echo "(string sub -l 20 -- $path) - Terminal (fish)"
   else
     echo "Terminal (fish)"
   end
