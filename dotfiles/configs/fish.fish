@@ -15,7 +15,7 @@ function fish_title
     if test "$trun" != "$command"; set ext "…"; end
     
     echo "$trun$ext - Terminal"
-  else if test "$path" != "$USER"
+  else if test "$path" != (basename ~)
     set trun (string sub -l 17 -- $path)
     if test "$trun" != "$path"; set ext "…"; end
     
