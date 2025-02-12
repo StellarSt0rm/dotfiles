@@ -57,7 +57,7 @@ alias clean-sys 'sudo nix-collect-garbage -d && sudo /run/current-system/bin/swi
 printf '\033[5 q'
 
 stty -echo
-if test "$TERM_PROGRAM" != "zed" -a "$IN_NIX_SHELL" = ""
+if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
   clear
   fastfetch
 end
