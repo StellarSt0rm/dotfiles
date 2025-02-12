@@ -56,12 +56,21 @@ console_title_template = "Terminal ({{ .Shell }})"
     [blocks.segments.properties]
       command = "printf '\\033[5 q'"
 
-# Execution time
+# Right Prompt
 [[blocks]]
   type = "prompt"
   alignment = "right"
   overflow = "hide"
 
+  # Status
+  [[blocks.segments]]
+  type = "status"
+  style = "plain"
+
+  foreground = "p:error"
+  template = "{{ .Code }}<white>{{ if .Segments.ExecutionTime.Template }} / {{ end }}</>"
+
+  # Execution Time
   [[blocks.segments]]
     type = "executiontime"
     style = "plain"
