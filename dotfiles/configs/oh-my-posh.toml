@@ -2,7 +2,7 @@
 
 version = 2
 final_space = true
-console_title_template = "Terminal ({{ .Shell }})"
+console_title_template = '{{ if not (matchP "~" .PWD) }}{{ .Folder }} - {{ end }}Terminal ({{ .Shell }})' # Show folder unless it's the user's home dir
 
 [palette]
   nix_shell = "yellow"
