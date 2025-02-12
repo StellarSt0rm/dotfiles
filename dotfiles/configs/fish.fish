@@ -6,13 +6,19 @@ if not status is-interactive
 end
 
 function fish_title
-  set -l command (status current-command) # Add "line" to include arguments
-  set -l path (basename (pwd))
+  set command (status current-command) # Add "line" to include arguments
+  set path (basename (pwd))
   
   if test "$command" != "fish"
-    echo "$(string sub -l 20 -- $command) - Terminal (fish)"
+    set trun (string sub -l 17 -- $command)
+    if test "$trun" != "$command"; set ext "…"; end
+    
+    echo "$trun$ext - Terminal (fish)"
   else if test "$path" != "$USER"
-    echo "(string sub -l 20 -- $path) - Terminal (fish)"
+    set trun (string sub -l 17 -- $path)
+    if test "$trun" != "$path"; set ext "…"; end
+    
+    echo "$trun$ext - Terminal (fish)"
   else
     echo "Terminal (fish)"
   end
