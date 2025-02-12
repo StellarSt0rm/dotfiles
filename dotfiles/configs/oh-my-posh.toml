@@ -64,11 +64,11 @@ console_title_template = "Terminal ({{ .Shell }})"
 
   # Status
   [[blocks.segments]]
-  type = "status"
-  style = "plain"
+    type = "status"
+    style = "plain"
 
-  foreground = "p:error"
-  template = "{{ .Code }}<white>{{ if .Segments.Executiontime.Template }} / {{ end }}</>"
+    foreground = "p:error"
+    template = "{{ .Code }}<white>{{ if .Segments.Executiontime.Template }} / {{ end }}</>"
 
   # Execution Time
   [[blocks.segments]]
