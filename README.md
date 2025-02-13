@@ -19,12 +19,12 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 - Wait for [Noteworthy](https://github.com/SeaDve/Noteworthy) to be available on nixpkgs.
 
 # Bootstrapping the config
-1. Install with no desktop environment, and make a user named `gemini`.
-2. Configure and connect to a network. See [Connecting to a network](#connecting-to-a-network).
-4. `git clone` this repo somewhere. (Preferably $HOME for easy editing)
-5. Add the new host to the configuration. See [Adding a host](#adding-a-host).
-   - Make sure to run `git add .` once done, otherwise the new files wont be seen by nix.
-6. Run `nix-rebuild boot --flake ./dotfiles#<hostname>` and reboot.
+1. Install git (`nix-env -i git`) and clone this repo.
+2. Follow the [NixOS manual #Networking](https://nixos.org/manual/nixos/stable/#sec-installation-manual-networking) up until #Installing->5.
+3. Set up the host and then run `git add .`. See [Adding A Host](#adding-a-host).
+6. Install NixOS with `nixos-install --root /mnt --flake dotfiles #<host>`.
+7. Set a password for the user with `nixos-enter --root /mnt -c 'passwd gemini'`.
+8. Reboot.
 
 # Adding a host
 Make a new file in `dotfiles/hosts/<hostname>/<hostname>.nix`, and then add the host to `dotfiles/flakes.nix`. \
@@ -39,28 +39,4 @@ Follow how it's implemented on other hosts to do it correctly!
 > It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
 
 > [!NOTE]
-> It's recommended to setup SSH and GPG keys, use `git submodule update --init && git -C secrets checkout main` and read the [instructions](/secrets/README.md).
-
-# Connecting to a network
-   1. Make a new wpa_supplicant config (`nano /tmp/wpa.conf`) and write to it:
-      ```
-      network={
-        ssid="<SSID>"
-        psk="<PASSWORD>"
-      }
-      ```
-   2. Start wpa_supplicant with the config:
-      ```
-      ifconfig # Get device name
-      sudo systemctl stop NetworkManager # If the system has NetworkManager, stop it!
-
-      sudo wpa_supplicant -i <DEVICE> -c /tmp/wpa.conf
-      ```
-   3. If the network doesnt have DHCP:
-      ```
-      ifconfig # Get the network IP for the device
-
-      sudo ip addr add <IP>/24 dev <DEVICE>
-      sudo ip route add default via <IP>
-      ```
-   4. Check the connection: `ping itsfoss.com`
+> It's recommended to setup SSH and GPG keys, read the [instructions](https://github.com/StellarSt0rm/dotfiles_secrets).
