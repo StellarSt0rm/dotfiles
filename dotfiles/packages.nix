@@ -54,6 +54,7 @@
     ffmpeg
     folio
     btop
+    warp
     xsel
 
     # Themes
