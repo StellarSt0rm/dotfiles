@@ -8,16 +8,16 @@ end
 function fish_title
   # Get the current command and path,
   # and strip out 'sudo' from the start of the command
-  set command (status current-commandline | string replace -r "^sudo " "") # Use "current-commandline" to include arguments
+  set command (status current-commandline | string replace -r "^sudo " "")
   set path (basename (pwd))
   
   # Handle both command and commandline, both display differently....
-  if test -n "$command" -a "$command" != "fish"
+  if test -n "$command"
     set trun (string sub -l 17 -- $command)
     if test "$trun" != "$command"; set ext "…"; end
     
     echo "$trun$ext - Terminal"
-  else if test "$path" != "$USER"
+  else if test "$path" != (basename ~)
     set trun (string sub -l 17 -- $path)
     if test "$trun" != "$path"; set ext "…"; end
     
