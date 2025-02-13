@@ -46,11 +46,11 @@
   security.sudo.extraConfig = "Defaults insults";
 
   # Export config files
-  systemd.user.tmpfiles.rules = [
-    "L+ %h/.config/fastfetch/config.jsonc 0755 - - - ${toString ./fastfetch.jsonc}"
-    "L+ %h/.config/fish/config.fish       0755 - - - ${toString ./fish.fish}"
-    "L+ %h/.config/fish/oh-my-posh.toml   0755 - - - ${toString ./oh-my-posh.toml}"
+  home-manager.users.gemini.home.file = {
+    ".config/fastfetch/config.jsonc".source = ./fastfetch.jsonc;
+    ".config/fish/config.fish".source = ./fish.fish;
+    ".config/fish/oh-my-posh.toml".source = ./oh-my-posh.toml;
     
-    "L+ %h/.config/Nickvision\\x20Tube\\x20Converter/config.json 0755 - - - ${toString ./parabolic.json}"
-  ];
+    ".config/Nickvision Tube Converter/config.json".source = ./parabolic.json;
+  };
 }

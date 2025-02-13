@@ -29,19 +29,15 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Configure keyboard layout and variant
-  services.xserver.xkb = {
-    layout = "es";
-    variant = "";
-  };
-
+  # Configure keyboard layout
+  services.xserver.xkb.layout = "es";
   console.keyMap = "es";
 
   # Set user profile picture
   system.activationScripts.script.text = ''
     mkdir -p /var/lib/AccountsService/{icons,users}
 
-    cp ${toString ./modules/gnome/images/user-icon.png} /var/lib/AccountsService/icons/gemini
+    cp ${./modules/gnome/images/user-icon.png} /var/lib/AccountsService/icons/gemini
     echo -e "[User]\nIcon=/var/lib/AccountsService/icons/gemini\n" > /var/lib/AccountsService/users/gemini
 
     chown root:root /var/lib/AccountsService/users/gemini
