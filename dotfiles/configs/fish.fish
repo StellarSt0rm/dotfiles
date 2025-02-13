@@ -52,7 +52,7 @@ function nix-run
     echo "You must provide at least one package."
     return 1
   end
-  nix-shell -p $pkg --command "$cmd"
+  nix-shell -p $pkg --run "$cmd"
 end
 
 # Init oh-my-posh - oh-my-posh is broken in Zed at the moment
