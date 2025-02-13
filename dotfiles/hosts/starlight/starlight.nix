@@ -20,5 +20,9 @@
     gimp
     godot_4
     easytag
+
+    # Other
+    virt-manager
+    qemu
   ];
 }
