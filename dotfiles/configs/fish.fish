@@ -11,7 +11,6 @@ function fish_title
   set command (status current-commandline | string replace -r "^sudo " "")
   set path (basename (pwd))
   
-  # Handle both command and commandline, both display differently....
   if test -n "$command"
     set trun (string sub -l 17 -- $command)
     if test "$trun" != "$command"; set ext "…"; end
