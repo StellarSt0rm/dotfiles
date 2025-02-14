@@ -52,13 +52,19 @@ in
     };
 
     "org/gnome/shell/extensions/app-hider".hidden-apps = [
+      "org.gnome.seahorse.Application.desktop"
+      "io.missioncenter.MissionCenter.desktop"
+      "ca.desrt.dconf-editor.desktop"
+      "org.gnome.font-viewer.desktop"
+      "org.gnome.Calculator.desktop"
+      "org.gnome.Extensions.desktop"
+      "org.gnome.Settings.desktop"
+      "org.gnome.Console.desktop"
+      "org.gnome.tweaks.desktop"
+      "org.gnome.Logs.Desktop"
+      "nixos-manual.desktop"
       "fish.desktop"
       "btop.desktop"
-      "nixos-manual.desktop"
-
-      "ca.desrt.dconf-editor.desktop"
-      "org.gnome.seahorse.Application.desktop"
-      "org.gnome.Console.desktop"
     ];
 
     # Blur my shell
