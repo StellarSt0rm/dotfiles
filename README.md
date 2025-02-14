@@ -19,12 +19,12 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 - Wait for [Noteworthy](https://github.com/SeaDve/Noteworthy) to be available on nixpkgs.
 
 # Bootstrapping the config
-1. Install git (`nix-env -i git`) and clone this repo.
-2. Follow the [NixOS manual #Networking](https://nixos.org/manual/nixos/stable/#sec-installation-manual-networking) up until #Installing->5.
+1. Follow the [NixOS manual #Networking](https://nixos.org/manual/nixos/stable/#sec-installation-manual-networking) up until #Installing->5.
+2. Install git (`nix-env -i git`) and clone this repo.
 3. Set up the host and then run `git add .`. See [Adding A Host](#adding-a-host).
-6. Install NixOS with `nixos-install --root /mnt --flake dotfiles #<host>`.
-7. Set a password for the user with `nixos-enter --root /mnt -c 'passwd gemini'`.
-8. Reboot.
+4. Install NixOS with `nixos-install --root /mnt --flake dotfiles #<host>`.
+5. Set a password for the user with `nixos-enter --root /mnt -c 'passwd gemini'`.
+6. Reboot.
 
 # Adding a host
 Make a new file in `dotfiles/hosts/<hostname>/<hostname>.nix`, and then add the host to `dotfiles/flakes.nix`. \
