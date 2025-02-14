@@ -38,6 +38,7 @@
       sort-order = [
         "org.gnome.Calculator.desktop"
         "org.gnome.Calendar.desktop"
+        "com.toolstack.Folio.desktop"
         "org.gnome.Characters.desktop"
       ];
     };
