@@ -24,7 +24,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 3. Set up the host and then run `git add .`. See [Adding A Host](#adding-a-host).
 4. Install NixOS with `nixos-install --root /mnt --flake ./dotfiles#<host>`.
 5. Set a password for the user with `nixos-enter --root /mnt -c 'passwd gemini'`.
-6. Reboot.
+6. Move the repo to `/mnt/home/gemini` and reboot.
 
 # Adding a host
 Make a new file in `dotfiles/hosts/<hostname>/<hostname>.nix`, and then add the host to `dotfiles/flakes.nix`. \
