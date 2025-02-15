@@ -1,3 +1,7 @@
+# Example - https://gitlab.com/usmcamp0811/dotfiles/-/blob/fb584a888680ff909319efdcbf33d863d0c00eaa/modules/home/apps/firefox/default.nix
+# Help - https://github.com/nix-community/home-manager/issues/6154
+# Doc - https://librewolf.net/docs/settings
+
 { inputs, pkgs, ... }: {
   # Remove when this PR is backported: https://github.com/nix-community/home-manager/pull/5684  
   nixpkgs.overlays = [
