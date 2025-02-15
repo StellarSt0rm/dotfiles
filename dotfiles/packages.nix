@@ -79,6 +79,7 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-shell-extensions
     gnome-system-monitor
+    gnome-connections
     gnome-contacts
     gnome-weather
     gnome-music
