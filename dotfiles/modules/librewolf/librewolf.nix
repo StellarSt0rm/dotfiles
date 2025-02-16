@@ -3,7 +3,7 @@
 # Doc - https://librewolf.net/docs/settings
 
 { inputs, pkgs, ... }: {
-  # Remove when this PR is backported: https://github.com/nix-community/home-manager/pull/5684  
+  # Remove when this PR is backported: https://github.com/nix-community/home-manager/pull/5684
   nixpkgs.overlays = [
     (final: prev: {
       home-manager = prev.home-manager // {
@@ -85,6 +85,7 @@
       settings = {
         "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
         "security.donottrackheader.enabled" = true;
+        "privacy.resistFingerprinting" = false; # Breaks a lot of websites
         "browser.startup.page" = 3; # Keep open windows
         "general.autoScroll" = true;
 
@@ -156,13 +157,13 @@
 
       userChrome = ''
         @import "gnome-theme/userChrome.css";
-        
+
         /* Custom styles */
         ${builtins.readFile ./styles/customChrome.css}
       '';
       userContent = ''
         @import "gnome-theme/userContent.css";
-        
+
         /* Custom Content Styles */
         ${builtins.readFile ./styles/customContent.css}
       '';

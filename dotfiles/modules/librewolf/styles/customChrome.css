@@ -1,5 +1,9 @@
 #identity-box.extensionPage #identity-icon-label,
 #firefox-view-button,
 #alltabs-button {
-  display: none !important;
+    display: none !important;
+}
+
+tab.tabbrowser-tab[pending="true"] {
+    filter: opacity(0.5) !important;
 }
