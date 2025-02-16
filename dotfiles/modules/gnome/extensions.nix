@@ -92,7 +92,6 @@ in
       keyboard-layout = false;
       world-clock = false;
       weather = false;
-      osd = false;
 
       window-demands-attention-focus = false;
       quick-settings-dark-mode = false;
