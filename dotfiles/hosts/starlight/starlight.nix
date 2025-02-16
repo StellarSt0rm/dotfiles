@@ -1,11 +1,27 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   imports = [ ./starlight-hardware.nix ];
-  
+
   networking.hostName = "starlight";
   system.stateVersion = "24.11";
-  
+
   home-manager.users.gemini.home.stateVersion = "24.11";
-  programs.git.user.signingKey = "0CD71823FAFF0DAAEFAFEA6AE4607894190C2177";
+  programs.git.config.user.signingKey = "0CD71823FAFF0DAAEFAFEA6AE4607894190C2177";
+
+  # Nvidia fuckery
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+    nvidiaSettings = true;
+
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    prime = {
+      nvidiaBusId = "PCI:0:2:0";
+      intelBusId = "PCI:0:0:2";
+	};
+  };
 
   # Install extra packages
   programs.steam.enable = true;
@@ -25,4 +41,10 @@
     virt-manager
     qemu
   ];
+
+  # Set extra Librewolf settings
+  home-manager.users.gemini.programs.librewolf.profiles.gemini.settings = {
+    "mousewheel.default.delta_multiplier_y" = 250;
+    "mousewheel.min_line_scroll_amount" = 15;
+  };
 }
