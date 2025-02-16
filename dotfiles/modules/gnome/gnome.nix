@@ -11,7 +11,7 @@
     "org/gnome/desktop/privacy".remove-old-temp-files = true;
 
     "org/gnome/mutter" = {
-      workspaces-on-primary-only = true;
+      workspaces-only-on-primary = true;
       center-new-windows = true;
       dynamic-workspaces = true;
       edge-tiling = false;
