@@ -176,7 +176,7 @@ in
       enable-raise-tile-group = true;
       enable-tiling-popup = true;
 
-      focus-hint = 1;
+      focus-hint = 0; # Disabled
       focus-hint-color = "rgb(98, 104, 128)"; # Background middle logo color
 
       single-screen-gap = 8;
