@@ -56,4 +56,11 @@
     "mousewheel.default.delta_multiplier_y" = 250;
     "mousewheel.min_line_scroll_amount" = 15;
   };
+
+  # Set games SSD mount point
+  fileSystems."/mnt/games" = {
+    device = "/dev/disk/by-label/games";
+    fsType = "auto";
+    options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+  };
 }
