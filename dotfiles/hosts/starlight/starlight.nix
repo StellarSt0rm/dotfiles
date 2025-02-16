@@ -24,7 +24,16 @@
   };
 
   # Install extra packages
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    localNetworkGameTransfers.openFirewall = true;
+
+    package = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        bibata-cursors
+      ];
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     # Games
