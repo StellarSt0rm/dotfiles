@@ -90,6 +90,7 @@
         "general.autoScroll" = true;
 
         # Annoyances
+        "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "clipboard.autocopy" = false;
         "middlemouse.paste" = false;
 
