@@ -9,8 +9,7 @@ let
     glide-scale=0.85
     glide-tilt=0.25
   '';
-in
-{
+in {
   dconf.settings = with lib.hm.gvariant; {
     "org/gnome/shell".enabled-extensions = with pkgs.gnomeExtensions; [
       clipboard-indicator.extensionUuid
