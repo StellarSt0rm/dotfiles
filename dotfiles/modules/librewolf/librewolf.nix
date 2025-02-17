@@ -89,6 +89,9 @@
         "browser.startup.page" = 3; # Keep open windows
         "general.autoScroll" = true;
 
+        "browser.download.autohideButton" = true;
+        "browser.download.alwaysOpenPanel" = true;
+
         # Annoyances
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "clipboard.autocopy" = false;
