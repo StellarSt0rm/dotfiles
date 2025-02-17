@@ -51,8 +51,7 @@
         ./modules/modules.nix
         ./configs/configs.nix
       ];
-    in
-    {
+    in {
       nixosConfigurations = {
         starlight = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
