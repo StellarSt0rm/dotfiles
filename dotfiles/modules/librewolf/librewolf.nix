@@ -93,6 +93,7 @@
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "clipboard.autocopy" = false;
         "middlemouse.paste" = false;
+        "webgl.disabled" = false;
 
         "extensions.pocket.showHome" = false;
         "extensions.pocket.enabled" = false;
