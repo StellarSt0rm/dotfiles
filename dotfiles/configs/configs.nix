@@ -19,7 +19,7 @@
         name = "StellarSt0rm";
       };
       commit.gpgSign = true;
-      
+
       pull.rebase = true;
       push.rebase = false;
     };
@@ -50,7 +50,7 @@
     ".config/fastfetch/config.jsonc".source = ./fastfetch.jsonc;
     ".config/fish/config.fish".source = ./fish.fish;
     ".config/fish/oh-my-posh.toml".source = ./oh-my-posh.toml;
-    
+
     ".config/Nickvision Tube Converter/config.json".source = ./parabolic.json;
   };
 }
