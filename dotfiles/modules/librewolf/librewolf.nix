@@ -52,7 +52,7 @@
         engines = {
           "Startpage" = {
             urls = [{
-              template = "https://startpage.com/do/search";
+              template = "https://www.startpage.com/do/search";
 
               params = [
                 { name = "query"; value = "{searchTerms}"; }
