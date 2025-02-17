@@ -21,7 +21,7 @@
     prime = {
       nvidiaBusId = "PCI:0:2:0";
       intelBusId = "PCI:0:0:2";
-	};
+    };
   };
 
   # Install extra packages
