@@ -47,7 +47,6 @@
         # Main modules
         ./user.nix
         ./packages.nix
-        ./nix-ld.nix
 
         ./modules/modules.nix
         ./configs/configs.nix
