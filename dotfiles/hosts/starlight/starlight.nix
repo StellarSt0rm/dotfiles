@@ -24,9 +24,17 @@
     };
   };
 
+  # Fix issue with suspend
+  systemd.services."systemd-suspend" = {
+    serviceConfig = {
+      Environment=''"SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"'';
+    };
+  };
+
   # Install extra packages
   programs.steam = {
     enable = true;
+    protontricks.enable = true;
     localNetworkGameTransfers.openFirewall = true;
 
     package = pkgs.steam.override {
