@@ -10,7 +10,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 # TODO
 - [ ] Split `global_modules` into profiles, in case i add more devices that need vastly different stuff in the future?
   - [ ] Add an `extras/` folder for niche “default” configurations, eg. Nvidia GPUs and Steam.
-  - Profiles could be split as `light`, `full` and `games`? With a “Central” `essentials` core shared by all.
+  - Profiles could be split as `light`, `full`, `dev` and `games`? With a “Central” `essentials` core shared by all.
 - [ ] Remove all references to `home-librewolf` once [this PR](https://github.com/nix-community/home-manager/pull/5684) is backported
 
 <br>
