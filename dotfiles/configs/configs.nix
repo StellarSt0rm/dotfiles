@@ -22,6 +22,8 @@
 
       pull.rebase = true;
       push.rebase = false;
+
+      "url \"git@github.com:\"".insteadOf = "https://github.com/";
     };
   };
 
