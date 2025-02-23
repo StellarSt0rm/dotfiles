@@ -11,25 +11,32 @@
   boot.kernelParams = [ "nvidia-drm.modeset=1" ];
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+  nixpkgs.config.nvidia.acceptLicense = true;
 
   hardware.nvidia = {
     modesetting.enable = true;
     open = false;
     nvidiaSettings = true;
 
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+
     package = config.boot.kernelPackages.nvidiaPackages.stable;
     prime = {
+      offload.enable = false;
+      sync.enable = false;
+
       nvidiaBusId = "PCI:0:2:0";
       intelBusId = "PCI:0:0:2";
     };
   };
 
   # Fix issue with suspend
-  systemd.services."systemd-suspend" = {
-    serviceConfig = {
-      Environment=''"SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"'';
-    };
-  };
+  #systemd.services."systemd-suspend" = {
+  #  serviceConfig = {
+  #    Environment=''"SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"'';
+  #  };
+  #};
 
   # Install extra packages
   programs.steam = {
