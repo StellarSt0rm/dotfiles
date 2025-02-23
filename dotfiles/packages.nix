@@ -52,6 +52,7 @@
     zed-editor
     python311
     rustup
+    gcc
 
     # Other
     gnome-tweaks
