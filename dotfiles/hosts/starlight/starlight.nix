@@ -38,24 +38,7 @@
   #  };
   #};
 
-  # Install extra packages
-  programs.steam = {
-    enable = true;
-    protontricks.enable = true;
-    localNetworkGameTransfers.openFirewall = true;
-
-    package = pkgs.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        bibata-cursors
-      ];
-    };
-  };
-
   environment.systemPackages = with pkgs; [
-    # Games
-    bottles
-    prismlauncher
-
     # Tools
     blender
     gimp

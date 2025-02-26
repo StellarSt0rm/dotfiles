@@ -51,19 +51,30 @@
         ./configs/configs.nix
       ];
 
-      dev_profile = core_profile ++ [
+      dev_profile = [
         ./profiles/dev.nix
+      ];
+
+      games_profile = [
+        ./profiles/games.nix
       ];
     in {
       nixosConfigurations = {
         starlight = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = dev_profile ++ [ ./hosts/starlight/starlight.nix ];
+          modules =
+            core_profile ++
+            dev_profile ++
+            games_profile ++
+            [ ./hosts/starlight/starlight.nix ];
         };
 
         mercury = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = dev_profile ++ [ ./hosts/mercury/mercury.nix ];
+          modules =
+            core_profile ++
+            dev_profile ++
+            [ ./hosts/mercury/mercury.nix ];
         };
       };
     };
