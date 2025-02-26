@@ -28,7 +28,7 @@
 
   outputs = { nixpkgs, home-manager, nur, nix-index-db, ... }@inputs:
     let
-      global_modules = [
+      core_profile = [
         # Fix error when a command isnt found + Pass inputs to all modules
         nix-index-db.nixosModules.nix-index
         { _module.args = { inherit inputs; }; }
@@ -37,30 +37,33 @@
         nur.modules.nixos.default
 
         # Home Manager
-        home-manager.nixosModules.home-manager
-        {
+        home-manager.nixosModules.home-manager {
           home-manager.backupFileExtension = "hm-backup";
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
         }
 
-        # Main modules
+        # Modules
         ./user.nix
-        ./packages.nix
+        ./profiles/core.nix
 
         ./modules/modules.nix
         ./configs/configs.nix
+      ];
+
+      dev_profile = core_profile ++ [
+        ./profiles/dev.nix
       ];
     in {
       nixosConfigurations = {
         starlight = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = global_modules ++ [ ./hosts/starlight/starlight.nix ];
+          modules = dev_profile ++ [ ./hosts/starlight/starlight.nix ];
         };
 
         mercury = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = global_modules ++ [ ./hosts/mercury/mercury.nix ];
+          modules = dev_profile ++ [ ./hosts/mercury/mercury.nix ];
         };
       };
     };
