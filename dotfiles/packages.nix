@@ -29,6 +29,10 @@
 
   services.displayManager.defaultSession = "gnome";
 
+  # NixLD
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [];
+
   # Environment packages
   environment.systemPackages = with pkgs; [
     # Essential
@@ -49,6 +53,7 @@
 
     # Coding
     fishPlugins.autopair
+    rust-analyzer
     zed-editor
     python311
     rustup
