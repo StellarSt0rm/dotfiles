@@ -12,8 +12,11 @@
     pinentryPackage = pkgs.pinentry-gnome3;
   };
   
-  programs.ssh.startAgent = true; # Make added ssh keys persist reboots
-
+  programs.ssh = {
+    startAgent = true; # Make added ssh keys persist reboots
+    enableAskPassword = true;
+  };
+  
   # Enable GNOME and GDM
   services.xserver = {
     enable = true;
