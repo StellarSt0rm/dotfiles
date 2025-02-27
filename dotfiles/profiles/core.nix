@@ -41,7 +41,7 @@
     # Essential
     mission-center
     librewolf
-    #parabolic # Media Downloader
+    parabolic # Media Downloader
     clapper   # Video Player
     gapless   # Music Player : g4music
     folio     # Notes

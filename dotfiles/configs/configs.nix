@@ -52,7 +52,10 @@
     ".config/fastfetch/config.jsonc".source = ./fastfetch.jsonc;
     ".config/fish/config.fish".source = ./fish.fish;
     ".config/fish/oh-my-posh.toml".source = ./oh-my-posh.toml;
-
-    ".config/Nickvision Tube Converter/config.json".source = ./parabolic.json;
   };
+  
+  # Parabolic crashes if it cant write to it's config file ⌤
+  systemd.tmpfiles.rules = [
+    "C+ %h/.config/Nickvision Tube Converter/config.json - - - - ${./parabolic.json}"
+  ];
 }
