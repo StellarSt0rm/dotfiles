@@ -6,11 +6,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable GPG agent
+  # Enable GPG and SSH agents
   programs.gnupg.agent = {
     enable = true;
     pinentryPackage = pkgs.pinentry-gnome3;
   };
+  
+  programs.ssh.startAgent = true; # Make added ssh keys persist reboots
 
   # Enable GNOME and GDM
   services.xserver = {
