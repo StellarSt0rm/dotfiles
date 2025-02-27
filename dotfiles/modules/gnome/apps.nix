@@ -12,7 +12,7 @@
     };
 
     "org/gnome/TextEditor" = {
-      restore-session = true;
+      restore-session = false;
       indent-style = "space";
       tab-width = 2;
 
