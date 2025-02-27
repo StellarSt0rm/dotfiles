@@ -41,7 +41,6 @@ function __fish_sudo_ctrl_q
 end
 
 function nix-run
-  # nix-run <packages> [-- <cmd>]
   set args (string split -f2 -m1 -- "nix-run" (status current-commandline))
   set args (string trim -r -- $args)
 
@@ -49,10 +48,23 @@ function nix-run
   set cmd (string split -f2 -m1 -- "-- " $args); or set cmd "fish" # Fallback to 'fish'
 
   if test -z "$pkg"
-    echo "You must provide at least one package."
+    echo "nix-run <packages> [-- <cmd>]"
     return 1
   end
   nix-shell -p $pkg --run "$cmd"
+end
+
+function rebuild-sys
+  set args (string split -f2 -- "rebuild-sys " (status current-commandline))
+  set mode (string split -f1 -- " " $args)
+  set host (string split -f2 -- " " $args)
+  
+  if test -z "$mode" -o -z "$host"
+    echo "rebuild-sys {switch | boot | test} #<host>"
+    return 1
+  end
+  
+  sudo nixos-rebuild "$mode" --flake $HOME/dotfiles/dotfiles$host
 end
 
 # Init oh-my-posh - oh-my-posh is broken in Zed at the moment
@@ -61,13 +73,13 @@ if test "$TERM_PROGRAM" != "zed"
 end
 
 # Aliases and abbrs
-alias clr 'clear'
+alias clr "clear"
 abbr --add "gedit" "gnome-text-editor" --position anywhere
 
 alias cb-copy fish_clipboard_copy
 alias cb-paste fish_clipboard_paste
 
-alias clean-sys 'sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot'
+alias clean-sys "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot"
 
 # Shell startup
 bind \cq '__fish_sudo_ctrl_q'
