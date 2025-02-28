@@ -39,5 +39,7 @@
       show-screenshot-ui = [ "<Shift><Super>s" "Print" ];
       toggle-message-tray = [ "<Super>v" ];
     };
+    
+    "org/gnome/desktop/wm/preferences".action-middle-click-titlebar = "minimize";
   };
 }
