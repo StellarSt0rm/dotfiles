@@ -8,7 +8,7 @@
   programs.git.config.user.signingKey = "0CD71823FAFF0DAAEFAFEA6AE4607894190C2177";
 
   # Nvidia fuckery
-  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
+  boot.kernelParams = [ "nvidia-drm.modeset=1" "module_blacklist=i915" ];
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   nixpkgs.config.nvidia.acceptLicense = true;
