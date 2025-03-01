@@ -79,6 +79,13 @@ abbr --add "gedit" "gnome-text-editor" --position anywhere
 alias cb-copy fish_clipboard_copy
 alias cb-paste fish_clipboard_paste
 
+alias gst "git status"
+alias gco "git commit"
+alias gad "git add"
+alias gch "git checkout"
+alias gps "git push"
+alias gpl "git pull"
+
 alias clean-sys "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot"
 
 # Shell startup
