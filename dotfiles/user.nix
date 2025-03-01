@@ -34,7 +34,7 @@
   console.keyMap = "es";
 
   # Set user profile picture
-  system.activationScripts.script.text = ''
+  system.activationScripts.user-pfp.text = ''
     mkdir -p /var/lib/AccountsService/{icons,users}
 
     cp ${./modules/gnome/images/user-icon.png} /var/lib/AccountsService/icons/gemini
