@@ -80,6 +80,7 @@ alias cb-copy fish_clipboard_copy
 alias cb-paste fish_clipboard_paste
 
 alias gst "git status"
+alias gdi "git diff"
 alias gco "git commit"
 alias gad "git add"
 alias gch "git checkout"
