@@ -6,6 +6,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 - [Nix Package Versions](https://lazamar.co.uk/nix-versions)
 - [Release Notes](https://nixos.org/manual/nixos/stable/release-notes)
 - [Release Status](https://endoflife.date/nixos)
+- [Find Song Name](https://musikerkennung.com/en/) (Not related to NixOS, but it's a useful tool i use!)
 
 # TODO
 - [ ] Split `global_modules` into profiles, in case i add more devices that need vastly different stuff in the future?
