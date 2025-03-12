@@ -38,6 +38,7 @@
   #  };
   #};
 
+  # Extra packages
   environment.systemPackages = with pkgs; [
     # Tools
     blender
@@ -62,4 +63,7 @@
     fsType = "auto";
     options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
   };
+
+  # Disable kanata, this host does have a Menu key.
+  services.kanata.enable = false;
 }
