@@ -15,6 +15,7 @@
 
       pull.rebase = true;
       push.rebase = false;
+      push.autoSetupRemote = true;
 
       "url \"git@github.com:\"".insteadOf = "https://github.com/";
     };
