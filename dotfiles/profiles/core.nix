@@ -67,6 +67,8 @@
     nil
 
     # Themes
+    qadwaitadecorations
+    qadwaitadecorations-qt6
     papirus-icon-theme
     bibata-cursors
     adw-gtk3
@@ -129,4 +131,7 @@
       gst-plugins-ugly
       gst-libav
     ]);
+  
+  # Set QT theme
+  environment.variables.QT_WAYLAND_DECORATION = "adwaita";
 }
