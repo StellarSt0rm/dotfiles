@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   # Enable dconf
   programs.dconf.enable = true;
 
@@ -23,7 +23,7 @@
 
   # Enable and configure Kanata
   services.kanata = {
-    enable = true;
+    enable = lib.mkDefault true;
 
     keyboards.default.config = ''
       ;; Map RCtrl to Menu key
