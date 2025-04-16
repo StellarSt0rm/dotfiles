@@ -1,0 +1,8 @@
+"features": {
+  "inline_completion_provider": "none",
+  "edit_prediction_provider": "none" // March 2025 and forwards
+},
+"assistant": {
+  "enabled": false,
+  "version": "2"
+}
