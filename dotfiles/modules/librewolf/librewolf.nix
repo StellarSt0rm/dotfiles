@@ -59,8 +59,16 @@
                 { name = "prfe"; value = (builtins.readFile ./startpage.conf); }
               ];
             }];
+            definedAliases = [ "@sp" ];
 
-            iconUpdateURL = "http://startpage.com/sp/cdn/favicons/favicon-gradient.ico";
+            iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
+          };
+
+          "Freedium" = {
+            urls = [{ template = "https://freedium.cfd/{searchTerms}"; }];
+            definedAliases = [ "@fd" ];
+
+            iconUpdateURL = "https://freedium.cfd/favicon-32x32.png";
           };
 
           "Bing".metaData.hidden = true;
