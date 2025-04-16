@@ -8,6 +8,8 @@
   programs.git.config.user.signingKey = "0CD71823FAFF0DAAEFAFEA6AE4607894190C2177";
 
   # Nvidia fuckery
+  nixpkgs.config.cudaSupport = true;
+  
   boot.kernelParams = [ "nvidia-drm.modeset=1" "module_blacklist=i915" ];
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -49,6 +51,8 @@
     # Other
     virt-manager
     qemu
+    
+    cudatoolkit
   ];
 
   # Set extra Librewolf settings
