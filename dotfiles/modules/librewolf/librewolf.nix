@@ -67,8 +67,6 @@
           "Freedium" = {
             urls = [{ template = "https://freedium.cfd/{searchTerms}"; }];
             definedAliases = [ "@fd" ];
-
-            iconUpdateURL = "https://freedium.cfd/favicon-32x32.png";
           };
 
           "Bing".metaData.hidden = true;
