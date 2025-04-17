@@ -44,6 +44,8 @@ function __fish_sudo_ctrl_q
 end
 
 function nix-run
+  # nix-run {packages} [-- {cmd}]  
+
   set args (string split -f2 -m1 -- "nix-run" (status current-commandline))
   set args (string trim -r -- $args)
 
@@ -51,9 +53,10 @@ function nix-run
   set cmd (string split -f2 -m1 -- "-- " $args); or set cmd "fish" # Fallback to 'fish'
 
   if test -z "$pkg"
-    echo "nix-run <packages> [-- <cmd>]"
+    echo "nix-run {packages} [-- {cmd}]"
     return 1
   end
+
   nix-shell -p $pkg --run "$cmd"
 end
 
