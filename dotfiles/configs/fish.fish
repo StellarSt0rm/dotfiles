@@ -67,8 +67,11 @@ function rebuild-sys
   set host (string split -f1 -- " " $args)  
   set mode (string split -f2 -- " " $args)
   
-  
   if test -z "$mode" -o -z "$host"
+    echo "rebuild-sys #{host} {switch | test | boot}"
+    return 1
+  else string match -qv '#*' $host
+    echo "error: `host` argument must start with #"
     echo "rebuild-sys #{host} {switch | test | boot}"
     return 1
   end
