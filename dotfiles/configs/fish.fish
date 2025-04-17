@@ -55,12 +55,15 @@ function nix-run
 end
 
 function rebuild-sys
+  # rebuild-sys #{host} {switch | test | boot}   
+
   set args (string split -f2 -- "rebuild-sys " (status current-commandline))
-  set mode (string split -f1 -- " " $args)
-  set host (string split -f2 -- " " $args)
+  set host (string split -f1 -- " " $args)  
+  set mode (string split -f2 -- " " $args)
+  
   
   if test -z "$mode" -o -z "$host"
-    echo "rebuild-sys {switch | boot | test} #<host>"
+    echo "rebuild-sys #{host} {switch | test | boot}"
     return 1
   end
   
