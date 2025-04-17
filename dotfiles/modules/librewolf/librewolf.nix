@@ -61,12 +61,15 @@
             }];
             definedAliases = [ "@sp" ];
 
+            icon = ./search_engines/startpage.ico;
             iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
           };
 
           "Freedium" = {
             urls = [{ template = "https://freedium.cfd/{searchTerms}"; }];
             definedAliases = [ "@fd" ];
+
+            icon = ./search_engines/freedium.png;
           };
 
           "Bing".metaData.hidden = true;
