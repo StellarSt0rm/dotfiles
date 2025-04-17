@@ -12,16 +12,19 @@ function fish_title
   set path (basename (pwd))
   
   if test -n "$command"
+    # Command
     set trun (string sub -l 17 -- $command)
     if test "$trun" != "$command"; set ext "…"; end
     
     echo "$trun$ext - Terminal"
-  else if test "$path" != (basename ~)
+  else if test "$path" != (basename $HOME)
+    # Path
     set trun (string sub -l 17 -- $path)
     if test "$trun" != "$path"; set ext "…"; end
     
-    echo "$trun$ext - Terminal"
+    echo "$trun$ext/ - Terminal"
   else
+    # None
     echo "Terminal"
   end
 end
