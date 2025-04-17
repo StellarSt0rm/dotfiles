@@ -70,7 +70,7 @@ function rebuild-sys
   if test -z "$mode" -o -z "$host"
     echo "rebuild-sys #{host} {switch | test | boot}"
     return 1
-  else string match -qv '#*' $host
+  else if string match -qv '#*' $host
     echo "error: `host` argument must start with #"
     echo "rebuild-sys #{host} {switch | test | boot}"
     return 1
