@@ -1,4 +1,7 @@
-{ pkgs, lib, ... }: {
+{ config, pkgs, lib, host-system, ... }: {
+  system.stateVersion = host-system.initial-version;
+  networking.hostName = host-system.hostname;
+  
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -14,6 +17,9 @@
     settings = {
         default-cache-ttl = 5 * 60;
         max-cache-ttl = 15 * 60;
+        
+        default-cache-ttl-ssh = 5 * 60;
+        max-cache-ttl-ssh = 15 * 60;
     };
 
     pinentryPackage = pkgs.pinentry-gnome3;

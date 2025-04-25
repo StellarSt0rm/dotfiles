@@ -67,6 +67,18 @@
             dev_profile ++
             games_profile ++
             [ ./hosts/starlight/starlight.nix ];
+            
+          specialArgs = {
+            host-system = {
+              initial-version = "24.11";
+              hostname = "starlight";
+            };
+
+            gpg-keys = {
+              master-id = "A7A6D89157D6249054583DC10046FFCB3C711ECA";
+              auth-keygrip = "EA15C8B157B1C130A23B180AEB3B383D19A17B5C";
+            };
+          };
         };
 
         mercury = nixpkgs.lib.nixosSystem {

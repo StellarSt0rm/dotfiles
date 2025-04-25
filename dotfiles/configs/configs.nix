@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, gpg-keys, ... }: {
   # Enable dconf
   programs.dconf.enable = true;
 
@@ -10,6 +10,8 @@
       user = {
         email = "StellarSt0rm@proton.me";
         name = "StellarSt0rm";
+
+        signingKey = gpg-keys.master-id;
       };
       commit.gpgSign = true;
 
@@ -47,9 +49,16 @@
     ".config/fish/config.fish".source = ./fish.fish;
     ".config/fish/oh-my-posh.toml".source = ./oh-my-posh.toml;
   };
-  
+
+  environment.etc."sshcontrol" = {
+    text = gpg-keys.auth-keygrip;
+    user = "gemini";
+    mode = "0600";
+  };
+
   # Parabolic crashes if it cant write to it's config file ⌤
   systemd.tmpfiles.rules = [
-    "C+ %h/.config/Nickvision Tube Converter/config.json - - - - ${./parabolic.json}"
+    "C+ %h/.config/Nickvision\ Tube\ Converter/config.json - - - - ${./parabolic.json}"
+    "L+ %h/.gnupg/sshcontrol 0600 - - - /etc/sshcontrol"
   ];
 }
