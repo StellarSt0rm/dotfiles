@@ -11,6 +11,11 @@
     enable = true;
     enableSSHSupport = true;
 
+    settings = {
+        default-cache-ttl = 5 * 60;
+        max-cache-ttl = 15 * 60;
+    }
+
     pinentryPackage = pkgs.pinentry-gnome3;
   };
   
