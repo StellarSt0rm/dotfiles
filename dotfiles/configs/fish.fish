@@ -86,7 +86,7 @@ end
 
 # Aliases and abbrs
 alias clr "clear"
-abbr --add "gedit" "gnome-text-editor" --position anywhere
+abbr --add --position anywhere "gedit" "gnome-text-editor"
 
 alias cb-copy fish_clipboard_copy
 alias cb-paste fish_clipboard_paste
