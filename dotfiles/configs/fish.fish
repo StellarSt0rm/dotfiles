@@ -103,6 +103,7 @@ alias clean-sys "sudo nix-collect-garbage -d && sudo /run/current-system/bin/swi
 
 # Shell startup
 bind \cq '__fish_sudo_ctrl_q'
+export SSH_AUTH_SOCK=(gpgconf --list-dirs agent-ssh-socket)
 
 stty -echo
 if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
