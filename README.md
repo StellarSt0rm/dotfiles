@@ -32,13 +32,22 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 Make a new file in `dotfiles/hosts/<hostname>/<hostname>.nix`, and then add the host to `dotfiles/flakes.nix`. \
 This new file can contain custom configurations for the host.
 
+Then copy the file at `/etc/nixos/hardware-configuration.nix` to `dotfiles/hosts/<hostname>/<hostname>-hardware.nix`! \
 Follow how it's implemented on other hosts to do it correctly!
 
 > [!CAUTION]
-> The file `hosts/<hostname>/<hostname>.nix` **must** define: \
-> `networking.hostName`, `system.stateVersion` and `home-manager.users.gemini.home.stateVersion`!
->
-> It also has to import `./<hostname>-hardware.nix` (Copy from `/etc/nixos/hardware-configuration.nix`).
+> The file at `dotfiles/hosts/<hostname>/<hostname>.nix` **must** define in their flake outputs section these variables in `specialArgs`: \
+> ```
+> host-system = {
+>   hostname = "<hostname>";
+>   initial-version = "<first_installed_nixos_version";
+> };
+> 
+> gpg-keys = {
+>   master-id = "<key_id>";
+>   auth-keygrip = "<auth_capable_subkey_keygrip>";
+> };
+> ```
 
 > [!NOTE]
-> It's recommended to setup SSH and GPG keys, read the [instructions](https://github.com/StellarSt0rm/dotfiles_secrets).
+> More detailed instructions for the GPG keys section [here](https://github.com/StellarSt0rm/dotfiles_secrets).
