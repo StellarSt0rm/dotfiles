@@ -70,8 +70,8 @@
             
           specialArgs = {
             host-system = {
-              initial-version = "24.11";
               hostname = "starlight";
+              initial-version = "24.11";
             };
 
             gpg-keys = {
