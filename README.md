@@ -37,7 +37,7 @@ Then copy the file at `/etc/nixos/hardware-configuration.nix` to `dotfiles/hosts
 Follow how it's implemented on other hosts to do it correctly!
 
 > [!CAUTION]
-> The file at `dotfiles/hosts/<hostname>/<hostname>.nix` **must** define in their flake outputs section these variables in `specialArgs`:
+> The host **must** define in their flake outputs section these variables in `specialArgs`:
 > ```
 > host-system = {
 >   hostname = "<hostname>";
