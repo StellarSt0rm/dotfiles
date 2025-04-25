@@ -1,12 +1,6 @@
 { ... }: {
   imports = [ ./mercury-hardware.nix ];
 
-  networking.hostName = "mercury";
-  system.stateVersion = "24.11";
-
-  home-manager.users.gemini.home.stateVersion = "24.11";
-  programs.git.config.user.signingKey = "7DA370CED46BF6E268A290F4DEBBC746017C00B3";
-
   # Improve battery life
   powerManagement = {
     enable = true;

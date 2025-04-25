@@ -67,7 +67,7 @@
             dev_profile ++
             games_profile ++
             [ ./hosts/starlight/starlight.nix ];
-            
+
           specialArgs = {
             host-system = {
               hostname = "starlight";
@@ -87,6 +87,18 @@
             core_profile ++
             dev_profile ++
             [ ./hosts/mercury/mercury.nix ];
+
+          specialArgs = {
+            host-system = {
+              hostname = "mercury";
+              #initial-version = "";
+            };
+
+            gpg-keys = {
+              #master-id = "";
+              #auth-keygrip = "";
+            };
+          };
         };
       };
     };
