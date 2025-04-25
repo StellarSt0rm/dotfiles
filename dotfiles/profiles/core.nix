@@ -20,6 +20,11 @@
   };
   
   services.gnome.gnome-keyring.enable = true;
+  environment.etc."xdg/autostart/gnome-keyring-ssh.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Hidden=true
+  '';
   
   # Enable GNOME and GDM
   services.xserver = {
