@@ -23,9 +23,18 @@
     };
   };
 
+  # Configure the GPG agent
   home-manager.users.gemini.services.gpg-agent = {
     enable = true;
     sshKeys = [ gpg-keys.auth-keygrip ];
+  };
+
+  programs.gnupg.agent.settings = {
+      default-cache-ttl = 5 * 60;
+      max-cache-ttl = 15 * 60;
+
+      default-cache-ttl-ssh = 5 * 60;
+      max-cache-ttl-ssh = 15 * 60;
   };
 
   # Enable and configure Kanata

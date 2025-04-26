@@ -1,7 +1,7 @@
-{ config, pkgs, lib, host-system, ... }: {
+{ pkgs, lib, host-system, ... }: {
   system.stateVersion = host-system.initial-version;
   networking.hostName = host-system.hostname;
-  
+
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -14,24 +14,16 @@
     enable = true;
     enableSSHSupport = true;
 
-    settings = {
-        default-cache-ttl = 5 * 60;
-        max-cache-ttl = 15 * 60;
-        
-        default-cache-ttl-ssh = 5 * 60;
-        max-cache-ttl-ssh = 15 * 60;
-    };
-
     pinentryPackage = pkgs.pinentry-gnome3;
   };
-  
+
   services.gnome.gnome-keyring.enable = true;
   environment.etc."xdg/autostart/gnome-keyring-ssh.desktop".text = ''
     [Desktop Entry]
     Type=Application
     Hidden=true
   '';
-  
+
   # Enable GNOME and GDM
   services.xserver = {
     enable = true;
@@ -149,7 +141,7 @@
       gst-plugins-ugly
       gst-libav
     ]);
-  
+
   # Set QT theme
   environment.variables.QT_WAYLAND_DECORATION = "adwaita";
 }
