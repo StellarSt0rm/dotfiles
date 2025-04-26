@@ -93,7 +93,7 @@
 
       settings = {
         "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
-        "security.donottrackheader.enabled" = true;
+        "privacy.donottrackheader.enabled" = true;
         "privacy.resistFingerprinting" = false; # Breaks a lot of websites
         "browser.startup.page" = 3; # Keep open windows
         "general.autoScroll" = true;
