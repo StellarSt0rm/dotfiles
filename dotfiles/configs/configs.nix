@@ -23,6 +23,11 @@
     };
   };
 
+  home-manager.users.gemini.services.gpg-agent = {
+    enable = true;
+    sshKeys = [ gpg-keys.auth-keygrip ];
+  };
+
   # Enable and configure Kanata
   services.kanata = {
     enable = lib.mkDefault true;
