@@ -48,6 +48,7 @@
     ".config/fastfetch/config.jsonc".source = ./fastfetch.jsonc;
     ".config/fish/config.fish".source = ./fish.fish;
     ".config/fish/oh-my-posh.toml".source = ./oh-my-posh.toml;
+    ".config/zed/settings.json".source = ./zed.jsonc;
   };
 
   # Parabolic crashes if it cant write to it's config file ⌤

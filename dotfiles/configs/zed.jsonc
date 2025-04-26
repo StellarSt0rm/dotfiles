@@ -1,0 +1,50 @@
+{
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Andromeda",
+    "dark": "Andromeda",
+  },
+
+  // Functionality
+  "autosave": "on_focus_change",
+
+  "tabs": {
+    "git_status": true,
+    "file_icons": true,
+  },
+
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false,
+  },
+
+  // Visual
+  "buffer_font_family": "Maple Mono",
+  "ui_font_family": "Cantarell", // Change to the new GNOME font in GNOME 48
+
+  "cursor_shape": "bar",
+  "inlay_hints": {
+    "enabled": true,
+
+    "show_parameter_hints": true,
+    "show_type_hints": false,
+
+    "show_other_hints": true,
+  },
+
+  "terminal": {
+    "cursor_shape": "bar",
+  },
+
+  // Disable AI features
+  "features": {
+    "inline_completion_provider": "none",
+    "edit_prediction_provider": "none",
+  },
+  "assistant": {
+    "enabled": false,
+    "version": "2",
+  },
+}
