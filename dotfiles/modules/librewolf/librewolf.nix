@@ -140,10 +140,11 @@
               "forward-button"
               "stop-reload-button"
               "new-tab-button"
+
               "customizableui-special-spring1"
               "urlbar-container"
               "customizableui-special-spring2"
-              "save-to-pocket-button"
+
               "downloads-button"
               "fxa-toolbar-menu-button"
               "_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action"
@@ -151,7 +152,7 @@
             ];
             toolbar-menubar = [ "menubar-items" ];
 
-            TabsToolBar = [ "tabbrowser-tabs" ];
+            TabsToolBar = [ "firefox-view-button" "tabbrowser-tabs" "alltabs-button" ];
             PersonalToolbar = [ "import-button" "personal-bookmarks" ];
           };
 
