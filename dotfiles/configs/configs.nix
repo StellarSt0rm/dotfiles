@@ -67,6 +67,6 @@
 
   # Parabolic crashes if it cant write to it's config file ⌤
   systemd.tmpfiles.rules = [
-    "C+ %h/.config/Nickvision\ Tube\ Converter/config.json - - - - ${./parabolic.json}"
+    "C+ \"/home/gemini/.config/Nickvision Tube Converter/config.json\" 644 gemini - - ${./parabolic.json}"
   ];
 }
