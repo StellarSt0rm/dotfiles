@@ -41,7 +41,7 @@
 
   # NixLD
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [];
+  programs.nix-ld.libraries = [];
 
   # System packages
   environment.systemPackages = with pkgs; [
