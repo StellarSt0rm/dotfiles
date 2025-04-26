@@ -1,0 +1,19 @@
+{
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Andromeda",
+    "dark": "Andromeda"
+  },
+
+  // Dsiable AI features
+  "features": {
+    "inline_completion_provider": "none",
+    "edit_prediction_provider": "none"
+  },
+  "assistant": {
+    "enabled": false,
+    "version": "2"
+  }
+}
