@@ -86,7 +86,7 @@ end
 
 # Init FZF
 fzf --fish | source
-export FZF_CTRL_T_COMMAND="fd --type d --no-hidden"
+export FZF_CTRL_T_COMMAND="fd --type d --no-hidden --ignore-file ~/.gitignore"
 
 # Aliases and abbrs
 alias clr "clear"

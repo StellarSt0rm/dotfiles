@@ -59,6 +59,8 @@
 
   # Export config files
   home-manager.users.gemini.home.file = {
+    ".gitignore".source = ./home_gitignore.txt;
+
     ".config/fastfetch/config.jsonc".source = ./fastfetch.jsonc;
     ".config/fish/config.fish".source = ./fish.fish;
     ".config/fish/oh-my-posh.toml".source = ./oh-my-posh.toml;
