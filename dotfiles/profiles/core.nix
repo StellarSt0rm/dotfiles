@@ -60,6 +60,8 @@
     fastfetch
     fish
     xsel # Clipboard tool
+    fzf
+    fd
 
     # Tools
     python311
