@@ -10,18 +10,18 @@ function fish_title
   # and strip out 'sudo' from the start of the command
   set command (status current-commandline | string replace -r "^sudo " "")
   set path (basename (pwd))
-  
+
   if test -n "$command"
     # Command
     set trun (string sub -l 17 -- $command)
     if test "$trun" != "$command"; set ext "…"; end
-    
+
     echo "$trun$ext - Terminal"
   else if test "$path" != (basename $HOME)
     # Path
     set trun (string sub -l 17 -- $path)
     if test "$trun" != "$path"; set ext "…"; end
-    
+
     echo "$trun$ext/ - Terminal"
   else
     # None
@@ -44,7 +44,7 @@ function __fish_sudo_ctrl_q
 end
 
 function nix-run
-  # nix-run {packages} [-- {cmd}]  
+  # nix-run {packages} [-- {cmd}]
 
   set args (string split -f2 -m1 -- "nix-run" (status current-commandline))
   set args (string trim -r -- $args)
@@ -61,12 +61,12 @@ function nix-run
 end
 
 function rebuild-sys
-  # rebuild-sys #{host} {switch | test | boot}   
+  # rebuild-sys #{host} {switch | test | boot}
 
   set args (string split -f2 -- "rebuild-sys " (status current-commandline))
-  set host (string split -f1 -- " " $args)  
+  set host (string split -f1 -- " " $args)
   set mode (string split -f2 -- " " $args)
-  
+
   if test -z "$mode" -o -z "$host"
     echo "rebuild-sys #{host} {switch | test | boot}"
     return 1
@@ -75,7 +75,7 @@ function rebuild-sys
     echo "rebuild-sys #{host} {switch | test | boot}"
     return 1
   end
-  
+
   sudo nixos-rebuild "$mode" --flake $HOME/dotfiles/dotfiles$host
 end
 
