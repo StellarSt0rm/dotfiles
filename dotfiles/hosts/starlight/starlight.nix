@@ -59,7 +59,7 @@
   # Set games SSD mount point
   fileSystems."/mnt/games" = {
     device = "/dev/disk/by-label/games";
-    fsType = "auto";
+    fsType = "ext4";
     options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
   };
 

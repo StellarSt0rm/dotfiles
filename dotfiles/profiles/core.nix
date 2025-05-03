@@ -120,6 +120,19 @@
 
   services.xserver.excludePackages = [ pkgs.xterm ];
 
+  # Systemd optimizations
+  systemd.services."NetworkManager-wait-online".enable = false;
+
+  services.journald.extraConfig = ''
+    SystemMaxUse=50M
+    RuntimeMaxUse=100M
+
+    ForwardToSyslog=no
+    ForwardToKMsg=no
+
+    MaxRetentionSec=1w
+  '';
+
   # Install NerdFonts
   fonts.packages = with pkgs; [
     maple-mono
