@@ -35,6 +35,7 @@ in {
       show-indicator = "only-active";
       restore-state = true;
 
+      show-notifications = false;
       duration-timer = 2;
       show-timer = false;
     };
