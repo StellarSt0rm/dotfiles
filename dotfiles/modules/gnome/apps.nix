@@ -47,5 +47,10 @@
       toolbar-enabled = true;
       note-max-width = -1;
     };
+
+    "io/github/seadve/Kooha" = {
+      framerate = (mkTuple [ 30 1 ]);
+      profile-id = "matrioska-h264"; # Smaller sizes than mp4
+    };
   };
 }

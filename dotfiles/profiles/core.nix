@@ -73,6 +73,7 @@
     # Other
     gnome-tweaks
     dconf-editor
+    kooha
 
     # Nix
     nixd
