@@ -44,6 +44,7 @@
 
     # Other
     virt-manager
+    piper # Libratbag frontend
     qemu
     
     #cudatoolkit
@@ -64,4 +65,7 @@
 
   # Disable kanata, this host does have a Menu key.
   services.kanata.enable = false;
+  
+  # Enable libratbag
+  services.ratbagd.enable = true;
 }
