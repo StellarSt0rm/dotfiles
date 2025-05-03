@@ -30,8 +30,9 @@
   };
 
   # Configure keyboard layout
-  services.xserver.xkb.layout = "es";
-  console.keyMap = "es";
+  services.xserver.xkb.layout = "us";
+  services.xserver.xkb.variant = "intl";
+  console.keyMap = "us-acentos";
 
   # Set user profile picture
   system.activationScripts.user-pfp.text = ''
