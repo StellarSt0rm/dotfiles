@@ -50,7 +50,7 @@
 
     "io/github/seadve/Kooha" = {
       framerate = (mkTuple [ 30 1 ]);
-      profile-id = "matrioska-h264"; # Smaller sizes than mp4
+      profile-id = "matroska-h264"; # Smaller sizes than mp4
     };
   };
 }
