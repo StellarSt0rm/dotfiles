@@ -51,3 +51,7 @@ Follow how it's implemented on other hosts to do it correctly!
 > ```
 >
 > More detailed instructions for the GPG keys section [here](https://github.com/StellarSt0rm/dotfiles_secrets).
+
+# Extra
+- [Disk Encryption](https://qfpl.io/posts/installing-nixos/#encryption-and-lvm)
+- [Secure Boot](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md)
