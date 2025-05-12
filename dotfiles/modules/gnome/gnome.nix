@@ -1,4 +1,6 @@
-{ ... }: {
+{ ... }: let
+  wallpaper-path = ./images/nixos-wallpaper-catppuccin-macchiato.png;
+in {
   imports = [
     ./extensions.nix
     ./apps.nix
@@ -46,9 +48,9 @@
     # Interface
     "org/gnome/desktop/lockdown".disable-user-switching = true;
 
-    "org/gnome/desktop/background".picture-uri-dark = "file://${./images/nixos-wallpaper-catppuccin-frappe.png}";
+    "org/gnome/desktop/background".picture-uri-dark = "file://${wallpaper-path}";
     "org/gnome/desktop/screensaver" = {
-      picture-uri = "file://${./images/nixos-wallpaper-catppuccin-frappe.png}";
+      picture-uri = "file://${wallpaper-path}";
       show-full-name-in-top-bar = false;
       user-switch-enabled = false;
     };
