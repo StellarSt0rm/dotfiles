@@ -50,6 +50,7 @@
     librewolf
     parabolic # Media Downloader
     clapper   # Video Player
+    #fractal   # Matrix client
     gapless   # Music Player : g4music
     folio     # Notes
     warp      # File tranfsers
