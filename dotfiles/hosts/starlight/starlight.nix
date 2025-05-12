@@ -65,6 +65,7 @@
 
   # Disable kanata, this host does have a Menu key.
   services.kanata.enable = false;
+  hardware.uinput.enable = false;
   
   # Enable libratbag
   services.ratbagd.enable = true;
