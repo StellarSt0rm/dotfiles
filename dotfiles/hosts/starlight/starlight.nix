@@ -43,9 +43,9 @@
     easytag
 
     # Other
-    virt-manager
+    #virt-manager
     piper # Libratbag frontend
-    qemu
+    #qemu
     
     #cudatoolkit
   ];
