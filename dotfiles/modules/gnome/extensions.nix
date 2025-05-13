@@ -94,6 +94,7 @@ in {
       weather = false;
 
       window-demands-attention-focus = false;
+      max-displayed-search-results = 0; # "Default"
       quick-settings-dark-mode = false;
     };
 
