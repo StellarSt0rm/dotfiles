@@ -9,6 +9,8 @@
 
   // Functionality
   "autosave": "on_focus_change",
+  "hard_tabs": false,
+  "tab_size": 4,
 
   "tabs": {
     "git_status": true,
@@ -16,13 +18,16 @@
   },
 
   "telemetry": {
-    "diagnostics": true,
+    "diagnostics": true, // Do report crashes
     "metrics": false,
   },
 
   // Visual
   "buffer_font_family": "Maple Mono",
   "ui_font_family": "Cantarell", // Change to the new GNOME font in GNOME 48
+  "auto_install_extensions": {
+    "zed-legacy-themes": true,
+  },
 
   "cursor_shape": "bar",
   "inlay_hints": {
