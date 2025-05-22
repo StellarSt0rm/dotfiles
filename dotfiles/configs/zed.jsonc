@@ -7,6 +7,10 @@
     "dark": "Andromeda",
   },
 
+  "auto_install_extensions": {
+    "zed-legacy-themes": true,
+  },
+
   // Functionality
   "autosave": "on_focus_change",
   "hard_tabs": false,
@@ -25,9 +29,6 @@
   // Visual
   "buffer_font_family": "Maple Mono",
   "ui_font_family": "Cantarell", // Change to the new GNOME font in GNOME 48
-  "auto_install_extensions": {
-    "zed-legacy-themes": true,
-  },
 
   "cursor_shape": "bar",
   "inlay_hints": {
