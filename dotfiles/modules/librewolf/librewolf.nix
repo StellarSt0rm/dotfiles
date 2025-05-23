@@ -98,6 +98,7 @@
         "browser.startup.page" = 3; # Keep open windows
         "general.autoScroll" = true;
 
+        "widget.use-xdg-desktop-portal.file-picker" = 1; # Use the new file picker in GNOME 47 and above
         "browser.download.autohideButton" = true;
         "browser.download.alwaysOpenPanel" = true;
 
