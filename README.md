@@ -33,8 +33,7 @@ Most of these 'docs' are for future me, for if I forget how this configuration w
 Make a new file in `dotfiles/hosts/<hostname>/<hostname>.nix`, and then add the host to `dotfiles/flakes.nix`. \
 This new file can contain custom configurations for the host.
 
-Then copy the file at `/etc/nixos/hardware-configuration.nix` to `dotfiles/hosts/<hostname>/<hostname>-hardware.nix` otherwise the host wont boot!
-
+Then copy the file at `/etc/nixos/hardware-configuration.nix` to `dotfiles/hosts/<hostname>/<hostname>-hardware.nix` otherwise the host wont boot! \
 Follow how it's implemented on other hosts to do it correctly!
 
 > [!CAUTION]
