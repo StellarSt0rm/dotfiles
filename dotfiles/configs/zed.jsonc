@@ -1,56 +1,56 @@
 {
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "Andromeda",
-    "dark": "Andromeda",
-  },
+	"ui_font_size": 16,
+	"buffer_font_size": 16,
+	"theme": {
+		"mode": "system",
+		"light": "Zed Legacy:  Andromeda",
+		"dark": "Zed Legacy:  Andromeda"
+	},
 
-  "auto_install_extensions": {
-    "zed-legacy-themes": true,
-  },
+	"auto_install_extensions": {
+		"zed-legacy-themes": true
+	},
 
-  // Functionality
-  "autosave": "on_focus_change",
-  "hard_tabs": false,
-  "tab_size": 4,
+	// Functionality
+	"autosave": "on_focus_change",
+	"hard_tabs": true,
+	"tab_size": 4,
 
-  "tabs": {
-    "git_status": true,
-    "file_icons": true,
-  },
+	"tabs": {
+		"git_status": true,
+		"file_icons": true
+	},
 
-  "telemetry": {
-    "diagnostics": true, // Do report crashes
-    "metrics": false,
-  },
+	"telemetry": {
+		"diagnostics": true, // Do report crashes
+		"metrics": false
+	},
 
-  // Visual
-  "buffer_font_family": "Maple Mono",
-  "ui_font_family": "Adwaita Sans",
+	// Visual
+	"buffer_font_family": "Maple Mono",
+	"ui_font_family": "Adwaita Sans",
 
-  "cursor_shape": "bar",
-  "inlay_hints": {
-    "enabled": true,
+	"cursor_shape": "bar",
+	"inlay_hints": {
+		"enabled": true,
 
-    "show_parameter_hints": true,
-    "show_type_hints": false,
+		"show_parameter_hints": true,
+		"show_type_hints": false,
 
-    "show_other_hints": true,
-  },
+		"show_other_hints": true
+	},
 
-  "terminal": {
-    "cursor_shape": "bar",
-  },
+	"terminal": {
+		"cursor_shape": "bar"
+	},
 
-  // Disable AI features
-  "features": {
-    "inline_completion_provider": "none",
-    "edit_prediction_provider": "none",
-  },
-  "assistant": {
-    "enabled": false,
-    "version": "2",
-  },
+	// Disable AI features
+	"features": {
+		"edit_prediction_provider": "none",
+		"edit_prediction_provider": "none"
+	},
+	"agent": {
+		"enabled": false,
+		"version": "2"
+	}
 }
