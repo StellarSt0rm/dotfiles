@@ -19,11 +19,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    #home-librewolf = {
-    #  url = "github:nix-community/home-manager/pull/5684/head";
-    #  flake = false;
-    #};
   };
 
   outputs = { nixpkgs, home-manager, nur, nix-index-db, ... }@inputs:
