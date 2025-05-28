@@ -1,3 +1,30 @@
+:root {
+  /* Fix colors */
+  --gnome-window-background: #222226;
+  
+  --gnome-sidebar-background: #2e2e32;
+	--gnome-secondary-sidebar-background: #222226;
+	
+	--gnome-menu-background: #2e2e32;
+	--gnome-headerbar-background: #2e2e32;
+	--gnome-toolbar-icon-fill: #ffffff;
+	
+	--gnome-tabbar-tab-hover-background: #3d3d40; /* Hardcoded color */
+	--gnome-tabbar-tab-active-background: #434346; /* Hardcoded color */
+	--gnome-tabbar-tab-active-hover-background: #49494d; /* Hardcoded color */
+	--gnome-private-in-content-page-background: #222226;
+	
+	&:-moz-window-inactive {
+	  --gnome-tabbar-tab-hover-background: #2a2a2e; /* Hardcoded color */
+		--gnome-tabbar-tab-active-background: #2d2d31; /* Hardcoded color */
+		--gnome-sidebar-background: #222226;
+	}
+	
+	/* Fix Borders */
+	--gnome-button-radius: 9px;
+	--gnome-menu-radius: 9px;
+}
+
 #identity-box.extensionPage #identity-icon-label,
 #firefox-view-button,
 #alltabs-button {

@@ -2,21 +2,12 @@
 # Help - https://github.com/nix-community/home-manager/issues/6154
 # Doc - https://librewolf.net/docs/settings
 
-{ inputs, pkgs, ... }: {
-  # Remove when this PR is backported: https://github.com/nix-community/home-manager/pull/5684
-  #nixpkgs.overlays = [
-  #  (final: prev: {
-  #    home-manager = prev.home-manager // {
-  #      programs.librewolf = import "${inputs.home-librewolf.outPath}/modules/programs/librewolf.nix";
-  #    };
-  #  })
-  #];
-
+{ pkgs, ... }: {
   home.file."gnome-theme" = {
     target = ".librewolf/gemini/chrome/gnome-theme";
     source = fetchTarball {
-      url = "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/refs/tags/v134.tar.gz";
-      sha256 = "sha256:072kaq9x7gjzwxzql3yn4x523is65pgzczaaw9a2rdc4gnm4ggsb";
+      url = "https://github.com/rafaelmardojai/firefox-gnome-theme/archive/refs/tags/v137.tar.gz";
+      sha256 = "sha256:089cin1ilxb1gz34z8fhlaf8nlqgkpfq64jn66n2kvzafl6cn8d2";
     };
   };
 
