@@ -56,7 +56,7 @@
 
               params = [
                 { name = "query"; value = "{searchTerms}"; }
-                { name = "prfe"; value = (builtins.readFile ./startpage.conf); }
+                { name = "prfe"; value = (builtins.readFile ./configs/startpage.txt); }
               ];
             }];
             definedAliases = [ "@sp" ];
