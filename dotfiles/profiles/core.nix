@@ -136,12 +136,12 @@
 
   # Install NerdFonts
   fonts.packages = with pkgs; [
-    maple-mono
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    maple-mono.variable
+    nerd-fonts.symbols-only
   ];
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

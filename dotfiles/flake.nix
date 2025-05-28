@@ -2,10 +2,10 @@
   description = "Overthrow The Government!";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -20,10 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    home-librewolf = {
-      url = "github:nix-community/home-manager/pull/5684/head";
-      flake = false;
-    };
+    #home-librewolf = {
+    #  url = "github:nix-community/home-manager/pull/5684/head";
+    #  flake = false;
+    #};
   };
 
   outputs = { nixpkgs, home-manager, nur, nix-index-db, ... }@inputs:

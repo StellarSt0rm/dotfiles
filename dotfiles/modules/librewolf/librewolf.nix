@@ -4,13 +4,13 @@
 
 { inputs, pkgs, ... }: {
   # Remove when this PR is backported: https://github.com/nix-community/home-manager/pull/5684
-  nixpkgs.overlays = [
-    (final: prev: {
-      home-manager = prev.home-manager // {
-        programs.librewolf = import "${inputs.home-librewolf.outPath}/modules/programs/librewolf.nix";
-      };
-    })
-  ];
+  #nixpkgs.overlays = [
+  #  (final: prev: {
+  #    home-manager = prev.home-manager // {
+  #      programs.librewolf = import "${inputs.home-librewolf.outPath}/modules/programs/librewolf.nix";
+  #    };
+  #  })
+  #];
 
   home.file."gnome-theme" = {
     target = ".librewolf/gemini/chrome/gnome-theme";
@@ -62,7 +62,6 @@
             definedAliases = [ "@sp" ];
 
             icon = ./search_engines/startpage.ico;
-            iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-gradient.ico";
           };
 
           "Freedium" = {
@@ -72,15 +71,15 @@
             icon = ./search_engines/freedium.png;
           };
 
-          "Bing".metaData.hidden = true;
-          "DuckDuckGo".metaData.hidden = true;
-          "Google".metaData.hidden = true;
-          "Wikipedia (en)".metaData.hidden = true;
+          "bing".metaData.hidden = true;
+          "ddg".metaData.hidden = true;
+          "google".metaData.hidden = true;
+          "wikipedia (en)".metaData.hidden = true;
           "History".metaData.hidden = true;
         };
       };
 
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         ublock-origin
         bitwarden
 
