@@ -13,8 +13,8 @@
 
     "org/gnome/TextEditor" = {
       restore-session = false;
-      indent-style = "space";
-      tab-width = 2;
+      indent-style = "tab";
+      tab-width = 4;
 
       highlight-current-line = true;
       show-line-numbers = true;
