@@ -14,7 +14,7 @@
 
   # Extra packages
   environment.systemPackages = with pkgs; [
-    bottles
+    (pkgs.bottles.override { removeWarningPopup = true; })
     prismlauncher
   ];
 }
