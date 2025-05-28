@@ -28,7 +28,7 @@
 
   // Visual
   "buffer_font_family": "Maple Mono",
-  "ui_font_family": "Cantarell", // Change to the new GNOME font in GNOME 48
+  "ui_font_family": "Adwaita Sans",
 
   "cursor_shape": "bar",
   "inlay_hints": {
