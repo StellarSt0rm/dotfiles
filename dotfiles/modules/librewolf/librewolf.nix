@@ -65,8 +65,9 @@
           "bing".metaData.hidden = true;
           "ddg".metaData.hidden = true;
           "google".metaData.hidden = true;
-          "wikipedia (en)".metaData.hidden = true;
-          "History".metaData.hidden = true;
+          "wikipedia".metaData.hidden = true;
+
+          "history".metaData.hidden = true;
         };
       };
 
