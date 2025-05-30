@@ -100,6 +100,7 @@ alias gad "git add"
 alias gch "git checkout"
 alias gps "git push"
 alias gpl "git pull"
+alias gbr "git branch"
 
 alias clean-sys "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot"
 
