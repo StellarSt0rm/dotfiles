@@ -79,10 +79,8 @@ function rebuild-sys
   sudo nixos-rebuild "$mode" --flake $HOME/dotfiles/dotfiles$host
 end
 
-# Init oh-my-posh - oh-my-posh is broken in Zed at the moment
-if test "$TERM_PROGRAM" != "zed"
-  oh-my-posh init fish -c "$HOME/.config/fish/oh-my-posh.toml" | source
-end
+# Init oh-my-posh
+oh-my-posh init fish -c "$HOME/.config/fish/oh-my-posh.toml" | source
 
 # Init FZF
 fzf --fish | source
