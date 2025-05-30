@@ -27,7 +27,8 @@
 
 #identity-box.extensionPage #identity-icon-label,
 #firefox-view-button,
-#alltabs-button {
+#alltabs-button,
+#urlbar .search-one-offs {
     display: none !important;
 }
 
