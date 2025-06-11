@@ -82,6 +82,14 @@ final_space = true
       style = "round"
       threshold = 5000
 
+  # Nix shell indicator
+#  [[blocks.segments]]
+#    type = "text"
+#    style = "plain"
+#
+#    foreground = "p:nix_shell"
+#    template = "{{ if .Env.IN_NIX_SHELL }}<p:status>{{ if or .Segments.Executiontime.Template .Segments.Status.Template }} / {{ end }}</>*{{ end }}"
+
 # Prompt
 [[blocks]]
   type = "prompt"
