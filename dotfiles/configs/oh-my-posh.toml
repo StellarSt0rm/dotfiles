@@ -102,7 +102,7 @@ final_space = true
 
     foreground = "p:normal"
     foreground_templates = [
-      "{{ if gt .Code 0 }}p:error{{ end }}",
+      #"{{ if gt .Code 0 }}p:error{{ end }}",
       "{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
     ]
 
@@ -112,7 +112,7 @@ final_space = true
 [transient_prompt]
   foreground = "p:normal"
   foreground_templates = [
-    "{{ if gt .Code 0 }}p:error{{ end }}",
+    #"{{ if gt .Code 0 }}p:error{{ end }}",
     "{{ if .Env.IN_NIX_SHELL }}p:nix_shell{{ end }}"
   ]
 
