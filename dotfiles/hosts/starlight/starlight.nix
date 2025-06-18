@@ -40,7 +40,7 @@
     blender
     gimp
     godot_4
-    easytag
+    tagger
 
     # Other
     #virt-manager
