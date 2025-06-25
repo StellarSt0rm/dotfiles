@@ -43,10 +43,9 @@
     tagger
 
     # Other
-    #virt-manager
+    dosage-tracker
     piper # Libratbag frontend
-    #qemu
-    
+
     #cudatoolkit
   ];
 
