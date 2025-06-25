@@ -1,6 +1,16 @@
 { ... }: {
   imports = [ ./mercury-hardware.nix ];
 
+  # Extra packages/extensions
+  environment.systemPackages = with pkgs; [
+    (pkgs.bottles.override { removeWarningPopup = true; })
+    gnomeExtensions.paperwm
+  ];
+
+  home-manager.users.gemini.dconf.settings."org/gnome/shell".enabled-extensions = [
+    pkgs.gnomeExtensions.paperwm.extensionUuid
+  ];
+
   # Improve battery life
   powerManagement = {
     enable = true;
