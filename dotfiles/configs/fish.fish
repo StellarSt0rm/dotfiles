@@ -106,6 +106,7 @@ alias clean-sys "sudo nix-collect-garbage -d && sudo /run/current-system/bin/swi
 
 # Shell startup
 bind \cq '__fish_sudo_ctrl_q'
+bind \cd 'echo -e "\033[4A"; exit' # Kinda fix the transient prompt not going away when using Ctrl + D
 
 stty -echo
 if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
