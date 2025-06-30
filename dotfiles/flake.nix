@@ -86,12 +86,12 @@
           specialArgs = {
             host-system = {
               hostname = "mercury";
-              #initial-version = "";
+              initial-version = "25.05";
             };
 
             gpg-keys = {
-              #master-id = "";
-              #auth-keygrip = "";
+              master-id = "E12558B683C64DF0D192A8C86F3224320D1376EF";
+              auth-keygrip = "40BBEE706E621A996BB9C14C7D584F74567902A8";
             };
           };
         };
