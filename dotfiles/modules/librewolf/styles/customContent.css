@@ -1,0 +1,23 @@
+/*@-moz-document url-prefix("https://www.youtube.com")
+{
+	ytd-rich-item-renderer[rendered-from-rich-grid] {
+		--ytd-rich-item-row-usable-width: calc(
+			50% - var(--ytd-rich-grid-gutter-margin) * 2
+		) !important;
+	}
+
+	ytd-rich-item-renderer[rendered-from-rich-grid][is-in-first-column] {
+		margin-left: none !important;
+	}
+
+	#contents {
+		margin-left: calc(
+			var(--ytd-rich-grid-item-margin) / 2 +
+				var(--ytd-rich-grid-gutter-margin)
+		);
+	}
+
+	ytd-rich-section-renderer {
+		display: none !important;
+	}
+}*/
