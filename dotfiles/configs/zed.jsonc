@@ -13,7 +13,6 @@
 
 	// Functionality
 	"autosave": "on_focus_change",
-	"hard_tabs": true,
 	"tab_size": 4,
 
 	"tabs": {
