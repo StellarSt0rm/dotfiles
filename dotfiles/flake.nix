@@ -19,9 +19,11 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, nur, nix-index-db, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nur, nix-index-db, nixos-hardware, ... }@inputs:
     let
       core_profile = [
         # Fix error when a command isnt found + Pass inputs to all modules
@@ -81,7 +83,7 @@
           modules =
             core_profile ++
             dev_profile ++
-            [ ./hosts/mercury/mercury.nix ];
+            [ nixos-hardware.nixosModules.framework-13-7040-amd ./hosts/mercury/mercury.nix ];
 
           specialArgs = {
             host-system = {
