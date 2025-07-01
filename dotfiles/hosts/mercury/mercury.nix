@@ -1,15 +1,19 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [ ./mercury-hardware.nix ];
 
   # Extra packages/extensions
   environment.systemPackages = with pkgs; [
-    (pkgs.bottles.override { removeWarningPopup = true; })
-    gnomeExtensions.paperwm
+    (bottles.override { removeWarningPopup = true; })
+    #gnomeExtensions.paperwm
   ];
 
-  home-manager.users.gemini.dconf.settings."org/gnome/shell".enabled-extensions = [
-    pkgs.gnomeExtensions.paperwm.extensionUuid
-  ];
+  home-manager.users.gemini.dconf.settings = {
+    "org/gnome/mutter".experimental-features = [ "scale-monitor-framebuffer" ]; # Enable fractional scaling
+
+    #"org/gnome/shell".enabled-extensions = [
+    #  pkgs.gnomeExtensions.paperwm.extensionUuid
+    #];
+  };
 
   # Improve battery life
   powerManagement = {
