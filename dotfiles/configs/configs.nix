@@ -61,9 +61,11 @@
   home-manager.users.gemini.home.file = {
     ".gitignore".source = ./home_gitignore.txt;
 
+    ".config/fish/config.fish".source = ./fish/fish.fish;
+    ".config/fish/fish_variables".source = ./fish/fish_variables.fish;
+    ".config/fish/oh-my-posh.toml".source = ./fish/oh-my-posh.toml;
+
     ".config/fastfetch/config.jsonc".source = ./fastfetch.jsonc;
-    ".config/fish/config.fish".source = ./fish.fish;
-    ".config/fish/oh-my-posh.toml".source = ./oh-my-posh.toml;
     ".config/zed/settings.json".source = ./zed.jsonc;
   };
 
