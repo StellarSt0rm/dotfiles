@@ -61,22 +61,20 @@ function nix-run
 end
 
 function rebuild-sys
-  # rebuild-sys #{host} {switch | test | boot}
+  # rebuild-sys {switch | test | boot}
 
   set args (string split -f2 -- "rebuild-sys " (status current-commandline))
-  set host (string split -f1 -- " " $args)
-  set mode (string split -f2 -- " " $args)
+  set mode (string split -f1 -- " " $args)
 
-  if test -z "$mode" -o -z "$host"
-    echo "rebuild-sys #{host} {switch | test | boot}"
+  if test -z "$mode"
+    echo "rebuild-sys {switch | test | boot}"
     return 1
-  else if string match -qv '#*' $host
-    echo "error: `host` argument must start with #"
-    echo "rebuild-sys #{host} {switch | test | boot}"
+  else if test -z $hostname
+    echo "error: `hostname` environment variable is not set!"
     return 1
   end
 
-  sudo nixos-rebuild "$mode" --flake $HOME/dotfiles/dotfiles$host
+  sudo nixos-rebuild "$mode" --flake $HOME/dotfiles/dotfiles#$hostname
 end
 
 # Init oh-my-posh
