@@ -59,6 +59,7 @@
     fishPlugins.autopair
     oh-my-posh
     fastfetch
+    fortune
     fish
     xsel # Clipboard tool
     fzf

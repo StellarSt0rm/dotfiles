@@ -1,76 +1,94 @@
 {
     //"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "display": {
-        "separator": "    "
+        "separator": "    ",
     },
     "modules": [
+        // Hardware Information
         {
-            "type": "custom", // HardwareStart
-            "format": "┌─────────── \u001b[1mHardware Information\u001b[0m ───────────┐" // `\u001b` is `\033`, or `\e`
+            "type": "custom",
+            "format": "┌─────────── \u001b[1mHardware Information\u001b[0m ───────────┐", // `\u001b` is `\033`, or `\e`
         },
         {
             "type": "host",
-            "key": "  󰌢"
+            "key": "  󰌢",
         },
         {
             "type": "cpu",
-            "key": "  󰍛"
+            "key": "  󰍛",
         },
         {
             "type": "gpu",
-            "key": "  󰘚"
+            "key": "  󰘚",
         },
         {
             "type": "memory",
-            "key": "  󰑭"
+            "key": "  󰑭",
         },
         {
             "type": "battery",
-            "key": "  "
+            "key": "  ",
         },
+
+        // Software Information
         {
-            "type": "custom", // SoftwareStart
-            "format": "├─────────── \u001b[1mSoftware Information\u001b[0m ───────────┤"
+            "type": "custom",
+            "format": "├─────────── \u001b[1mSoftware Information\u001b[0m ───────────┤",
         },
         {
             "type": "os",
             "key": "  ",
-            "format": "{3}"
+            "format": "{3}",
         },
         {
             "type": "kernel",
             "key": "  ",
-            "format": "{2}"
+            "format": "{2}",
         },
         {
             "type": "de",
-            "key": "  "
+            "key": "  ",
         },
         {
             "type": "shell",
-            "key": "  "
+            "key": "  ",
         },
         {
             "type": "packages",
-            "key": "  󰏔"
+            "key": "  󰏔",
         },
         {
             "type": "uptime",
-            "key": "  󰅐"
+            "key": "  󰅐",
         },
         {
             "type": "localip",
             "key": "  󰩠",
-            "format": "{1}"
+            "format": "{1}",
         },
         {
-            "type": "custom", // InformationEnd
-            "format": "└────────────────────────────────────────────┘"
+            "type": "custom",
+            "format": "└────────────────────────────────────────────┘",
+        },
+
+        // Riddle
+        {
+            "type": "custom",
+            "format": "",
         },
         {
-            "type": "colors",
-            "paddingLeft": 15,
-            "symbol": "circle"
-        }
-    ]
+            "type": "command",
+            "text": "fortune -sn 80 /nix/store/*-fortune-mod-*/share/games/fortunes/riddles | sed 's/\t/ /g' > /tmp/riddle",
+        },
+        {
+            "type": "command",
+            "text": "head -n 1 /tmp/riddle",
+            "key": " ",
+        },
+        {
+            "type": "command",
+            "text": "tail -n 1 /tmp/riddle",
+            "key": " ",
+        },
+    ],
 }
