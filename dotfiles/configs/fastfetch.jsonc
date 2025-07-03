@@ -78,16 +78,16 @@
         },
         {
             "type": "command",
-            "text": "fortune -sn 80 /nix/store/*-fortune-mod-*/share/games/fortunes/riddles | sed 's/\t/ /g' > /tmp/riddle",
+            "text": "fortune -sn 70 -a riddles | sed 's/\t/ /g' > /tmp/riddle",
         },
         {
             "type": "command",
-            "text": "head -n 1 /tmp/riddle",
+            "text": "sed -n '1p' /tmp/riddle",
             "key": " ",
         },
         {
             "type": "command",
-            "text": "tail -n 1 /tmp/riddle",
+            "text": "sed -n '2,3p' /tmp/riddle",
             "key": " ",
         },
     ],
