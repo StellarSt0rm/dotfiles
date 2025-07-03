@@ -8,7 +8,7 @@
   ];
 
   home-manager.users.gemini.dconf.settings = {
-    "org/gnome/mutter".experimental-features = [ "scale-monitor-framebuffer" ]; # Enable fractional scaling
+    "org/gnome/mutter".experimental-features = [ "scale-monitor-framebuffer" "xwayland-native-scaling" ]; # Enable fractional scaling
 
     #"org/gnome/shell".enabled-extensions = [
     #  pkgs.gnomeExtensions.paperwm.extensionUuid
