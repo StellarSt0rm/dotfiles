@@ -109,6 +109,7 @@ bind \cd 'echo -e "\033[4A"; exit' # Kinda fix the transient prompt not going aw
 stty -echo
 if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
   clear
-  fastfetch
+  fortune -sn 70 -a riddles | sed 's/\t/ /g'
+  #fastfetch
 end
 stty echo
