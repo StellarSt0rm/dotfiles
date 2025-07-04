@@ -114,7 +114,7 @@ in {
       first-field = "xesam:title";
       second-field = "xesam:artist";
       last-field = "";
-      max-string-length = 20;
+      max-string-length = 30;
 
       volume-control-scheme = "application";
 
