@@ -51,6 +51,7 @@
     parabolic # Media Downloader
     clapper # Video Player
     gapless # Music Player : g4music
+    gradia # Photo Editor
     folio # Notes
     warp # File tranfsers
 
