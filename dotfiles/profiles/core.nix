@@ -75,6 +75,7 @@
     # Other
     gnome-tweaks
     dconf-editor
+    p7zip
     kooha
 
     # Nix
