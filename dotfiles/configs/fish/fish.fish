@@ -85,7 +85,6 @@ fzf --fish | source
 export FZF_CTRL_T_COMMAND="fd --type d --ignore-file ~/.gitignore"
 
 # Aliases and abbrs
-alias clr "clear"
 abbr --add --position anywhere "gedit" "gnome-text-editor"
 
 alias cb-copy fish_clipboard_copy
@@ -109,8 +108,9 @@ bind \cd 'echo -e "\033[4A"; exit' # Kinda fix the transient prompt not going aw
 stty -echo
 if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
   clear
-  fortune -sn 90 -a riddles | sed 's/\t/ /g'
+
+  echo -e " $(nixos-version) |  $(uname -r)\n"
+  fortune -sn 80 -a riddles | sed 's/\t/ /g'
   echo
-  #fastfetch
 end
 stty echo
