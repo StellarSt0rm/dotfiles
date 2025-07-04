@@ -108,7 +108,7 @@ bind \cd 'echo -e "\033[4A"; exit' # Kinda fix the transient prompt not going aw
 if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
   stty -echo
 
-  echo -e " $(nixos-version) |  $(uname -r)\n"
+  echo -e " $(nixos-version) |  $(uname -r)\n"
   fortune -sn 80 -a riddles | sed 's/\t/ /g'
 
   echo
