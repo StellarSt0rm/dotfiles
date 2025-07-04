@@ -109,7 +109,7 @@ if test "$TERM_PROGRAM" != "zed" -a -z "$IN_NIX_SHELL"
   stty -echo
 
   echo -e " $(nixos-version) |  $(uname -r)\n"
-  fortune -sn 80 -a riddles | sed 's/\t/ /g'
+  fortune -a riddles | sed 's/\t/ /g'
 
   echo
   stty echo
