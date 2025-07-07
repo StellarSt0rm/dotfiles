@@ -82,7 +82,7 @@ oh-my-posh init fish -c "$HOME/.config/fish/oh-my-posh.toml" | source
 
 # Init FZF
 fzf --fish | source
-export FZF_CTRL_T_COMMAND="fd --type d --ignore-file ~/.gitignore"
+export FZF_CTRL_T_COMMAND="fd --type d --ignore-file $HOME/.config/fish/fd_gitignore"
 
 # Aliases and abbrs
 abbr --add --position anywhere "gedit" "gnome-text-editor"
