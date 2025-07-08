@@ -142,6 +142,13 @@
     nerd-fonts.symbols-only
   ];
 
+  # Autoclean old generations
+  nix.gc = {
+    automatic = true;
+    dates = "Sat 12:00";
+    options = "--delete-older-than 4d";
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
