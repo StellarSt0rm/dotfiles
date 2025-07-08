@@ -99,7 +99,7 @@ alias gps "git push"
 alias gpl "git pull"
 alias gbr "git branch"
 
-alias clean-sys "sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot"
+alias clean-sys "sudo nix-collect-garbage -d"
 
 # Shell startup
 bind \cq '__fish_sudo_ctrl_q'
