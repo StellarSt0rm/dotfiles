@@ -16,7 +16,6 @@ in {
     CARGO_HOME = "${XDG_DATA}/cargo";
     RUSTUP_HOME = "${XDG_DATA}/rustup";
     WINEPREFIX = "${XDG_DATA}/wine";
-    GNUPGHOME = "${XDG_DATA}/gnupg";
 
     # XDG CONFIG
     DOCKER_CONFIG = "${XDG_CONFIG}/docker";
@@ -29,4 +28,5 @@ in {
   };
 
   nix.settings.use-xdg-base-directories = true;
+  home-manager.users.gemini.programs.gpg.homedir = "${XDG_DATA}/gnupg";
 }
