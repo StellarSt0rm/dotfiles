@@ -72,8 +72,8 @@
             };
 
             gpg-keys = {
-              master-id = "A7A6D89157D6249054583DC10046FFCB3C711ECA";
-              auth-keygrip = "EA15C8B157B1C130A23B180AEB3B383D19A17B5C";
+              master-id = "4867A41786FC667B6F000FEFBAFDF67DF7BC314C";
+              auth-keygrip = "468D0E31DF3ADAFA91C0A84303A33F7BA62F7705";
             };
           };
         };
