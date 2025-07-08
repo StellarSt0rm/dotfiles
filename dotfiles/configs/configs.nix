@@ -1,4 +1,8 @@
 { pkgs, lib, gpg-keys, ... }: {
+  imports = [
+    ./dotfiles.nix
+  ];
+
   # Enable dconf
   programs.dconf.enable = true;
 
@@ -33,8 +37,8 @@
       default-cache-ttl = 5 * 60;
       max-cache-ttl = 15 * 60;
 
-      default-cache-ttl-ssh = 5 * 60;
-      max-cache-ttl-ssh = 15 * 60;
+      default-cache-ttl-ssh = 15 * 60;
+      max-cache-ttl-ssh = 30 * 60;
   };
 
   # Enable and configure Kanata
