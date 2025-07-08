@@ -30,6 +30,7 @@
   # Configure the GPG agent
   home-manager.users.gemini.services.gpg-agent = {
     enable = true;
+    enableSshSupport = true;
     sshKeys = [ gpg-keys.auth-keygrip ];
   };
 
