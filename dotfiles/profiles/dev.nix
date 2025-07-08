@@ -3,11 +3,11 @@
     # Coding
     rust-analyzer
     zed-editor
+    #docker
     rustup
     gcc
   ];
 
   # Docker
-  #virtualisation.docker.enable = lib.mkDefault true;
   users.users.gemini.extraGroups = [ "docker" ];
 }
