@@ -31,8 +31,8 @@
 
   # Configure keyboard layout
   services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "intl";
-  console.keyMap = "us-acentos";
+  services.xserver.xkb.variant = "altgr-intl";
+  console.useXkbConfig = true;
 
   # Set user profile picture
   system.activationScripts.user-pfp.text = ''
