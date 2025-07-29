@@ -145,8 +145,10 @@
   # Autoclean old generations
   nix.gc = {
     automatic = true;
+    persistent = true;
+    
     dates = "Sat 12:00";
-    options = "--delete-older-than 4d";
+    options = "--delete-older-than 5d";
   };
 
   # Enable sound with pipewire.
