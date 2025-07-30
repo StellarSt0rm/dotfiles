@@ -42,22 +42,6 @@
       max-cache-ttl-ssh = 30 * 60;
   };
 
-  # Enable and configure Kanata
-  services.kanata = {
-    enable = lib.mkDefault true;
-
-    keyboards.default.config = ''
-      ;; Map RCtrl to Menu key
-      (defsrc
-        rctrl
-      )
-
-      (deflayer base
-        menu
-      )
-    '';
-  };
-
   # Enable sudo inults
   security.sudo.package = pkgs.sudo.override { withInsults = true; };
   security.sudo.extraConfig = "Defaults insults";

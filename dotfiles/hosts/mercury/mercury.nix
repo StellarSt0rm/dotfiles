@@ -27,4 +27,20 @@
 
   # Enable touchpad support
   services.libinput.enable = true;
+  
+  # Enable and configure Kanata
+  services.kanata = {
+    enable = true;
+
+    keyboards.default.config = ''
+      ;; Map RCtrl to Menu key
+      (defsrc
+        rctrl
+      )
+
+      (deflayer base
+        menu
+      )
+    '';
+  };
 }
