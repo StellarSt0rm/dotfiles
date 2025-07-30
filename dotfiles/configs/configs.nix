@@ -39,7 +39,7 @@
       max-cache-ttl = 15 * 60;
 
       default-cache-ttl-ssh = 15 * 60;
-      max-cache-ttl-ssh = 30 * 60;
+      max-cache-ttl-ssh = 60 * 60;
   };
 
   # Enable sudo inults
